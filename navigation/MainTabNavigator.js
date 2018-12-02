@@ -8,10 +8,12 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import DiscoverScreen from '../screens/DiscoverScreen';
+import DiscoverScreenFarmer from '../screens/DiscoverScreenFarmer'
+import FarmerJohnProfile from '../screens/FarmerJohnProfile'
 
 
 const SplashStack = createStackNavigator({
-  Splash:   DiscoverScreen, 
+  Splash:   FarmerJohnProfile, 
 });
 
 SplashStack.navigationOptions = {
