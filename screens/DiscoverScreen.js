@@ -24,12 +24,12 @@ export default class DiscoverScreen extends React.Component {
     title: 'Discover',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 30,
+      fontSize: 40,
       color: '#FFFFFF',
       textAlign: 'left',
       flex: 1,
     },
-    headerStyle: {height: 100},
+    headerStyle: {height: 75},
     headerBackground: (
       <Image
         style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
@@ -41,14 +41,19 @@ export default class DiscoverScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+
+
         <SearchBar 
         round 
         lightTheme 
         placeholder='Search for farmers here...' 
         containerStyle={{backgroundColor: '#F7EFEC',}}/>
 
+
         <View style={{flexDirection: 'row', marginBottom: 10}}>
+        
         <View style={styles.buttonContainer}>
+
         <TouchableOpacity style={{ height: 100, margin: 10,
           backgroundColor: '#b5aaa5', alignItems: 'center', borderRadius: 20,}} 
           title="Button 1">
@@ -57,38 +62,86 @@ export default class DiscoverScreen extends React.Component {
 
         </View>
         <View style={styles.buttonContainer}>
-        <TouchableOpacity style={{ height: 100, margin: 10,
-          backgroundColor: '#DDDDDD', alignItems: 'flex-end', 
+
+        <TouchableOpacity 
+          style={{ height: 100, margin: 10,
+          backgroundColor: '#DDDDDD', alignItems: 'center', 
           borderRadius: 20}} 
+
           title="Button 2">
+
         <Text style={{color: '#FFFFFF',}}> Farmers </Text>
+        
         </TouchableOpacity>
+
         </View>
+
         </View>
+
         <View style = {styles.textContainer}>
         <Text style= {{fontSize: 40, fontWeight: 'bold'}}> Today </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10}}> What's happening around you today? </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> What's happening around you today? </Text>
         </View>
+
+
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
+
+
         <Category 
         imageUri={require('../assets/images/home.jpg')}
         name="Burlingame Market"/>
+
+
         <Category 
         imageUri={require('../assets/images/home.jpg')}
         name="Palo Alto Market"/>
+
+
         <Category 
         imageUri={require('../assets/images/home.jpg')}
         name="San Mateo Market"/>
         </ScrollView>
+
+
         <View style={styles.containerThree}>
-
-
-
                             
+
         </View>
         <View style={styles.containerFour}>
         </View>
+
+        <View style = {styles.textContainer}>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Markets you've viewed </Text>
+        </View>
+
+        <ScrollView horizontal={true}
+        showsHorizontalScrollIndicator={false}>
+
+
+        <Category 
+        imageUri={require('../assets/images/home.jpg')}
+        name="Burlingame Market"/>
+
+
+        <Category 
+        imageUri={require('../assets/images/home.jpg')}
+        name="Palo Alto Market"/>
+
+
+        <Category 
+        imageUri={require('../assets/images/home.jpg')}
+        name="San Mateo Market"/>
+        </ScrollView>
+
+
+        <View style={styles.containerThree}>
+                            
+
+        </View>
+        <View style={styles.containerFour}>
+        </View>
+
       </ScrollView>
     );
   }
