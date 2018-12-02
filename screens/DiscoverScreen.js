@@ -51,30 +51,31 @@ export default class DiscoverScreen extends React.Component {
 
 
         <View style={{flexDirection: 'row', marginBottom: 10}}>
-        
-        <View style={styles.buttonContainer}>
+          
+          <View style={styles.buttonContainer}>
 
-        <TouchableOpacity style={{ height: 100, margin: 10,
-          backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,}} 
-          title="Button 1">
-        <Text style={{color: '#b5aaa5',}}> Markets </Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={{ height: 100, margin: 10,
+              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,}} 
+              title="Button 1">
+            <Text style={{color: '#b5aaa5',}}> Markets </Text>
+            </TouchableOpacity>
 
-        </View>
-        <View style={styles.buttonContainer}>
+          </View>
+          
+          <View style={styles.buttonContainer}>
 
-        <TouchableOpacity 
-          style={{ height: 100, margin: 10,
-          backgroundColor: '#DDDDDD', alignItems: 'center', 
-          borderRadius: 20}} 
+            <TouchableOpacity 
+              style={{ height: 100, margin: 10,
+              backgroundColor: '#DDDDDD', alignItems: 'center', 
+              borderRadius: 20}} 
 
-          title="Button 2">
+              title="Button 2">
 
-        <Text style={{color: '#FFFFFF',}}> Farmers </Text>
-        
-        </TouchableOpacity>
+            <Text style={{color: '#FFFFFF',}}> Farmers </Text>
+            
+            </TouchableOpacity>
 
-        </View>
+          </View>
 
         </View>
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   Image,
   Platform,
   ScrollView,
@@ -43,7 +44,7 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 40, fontWeight: 'bold', color: '#96594A', paddingTop: 30}}> Farmer John </Text>        
+        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 30}}> Farmer John </Text>        
         </View>
         
         <View style={styles.profilePic}>
@@ -62,7 +63,59 @@ export default class DiscoverScreen extends React.Component {
               </Text>
           </View>
         </View>
+       
+        <View style={{flexDirection: 'row', marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between'}}>
+          
+          <View style={styles.barterButton}>    
+            <TouchableOpacity
+              onPress={() => {
+                Alert.alert('You tapped the button!');
+              }}
+              style={{
+                backgroundColor: "#96594A",
+                borderColor: "transparent",
+                width: 125,
+                height: 50,
+                borderWidth: 0,
+                borderRadius: 20,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+              }}
 
+            >
+              <View style={styles.barterText}>    
+                <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Barter! </Text>
+              </View>  
+            </TouchableOpacity>
+          </View>  
+
+          <View style={styles.carpoolButton}>    
+            <TouchableOpacity
+              onPress={() => {
+                Alert.alert('You tapped the button!');
+              }}
+              style={{
+                backgroundColor: "#96594A",
+                borderColor: "transparent",
+                width: 125,
+                height: 50,
+                borderWidth: 0,
+                borderRadius: 20,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+              }}
+
+            >
+              <View style={styles.barterText}>    
+                <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Carpool! </Text>
+              </View>  
+            </TouchableOpacity>
+          </View>  
+        </View>
  
 
       </ScrollView>
@@ -87,21 +140,40 @@ const styles = StyleSheet.create({
   },
   bioContainer: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
     borderWidth: 2,
     borderColor: 'black',
+    elevation: 1,
   },
   bioText:{
     color: '#96594A',
     flex: 1,
     alignItems: 'center',
+    fontSize: 20,
+
   },
+  barterButton:{
+    paddingTop: 15,
+    paddingLeft: 20,
+  },
+  carpoolButton:{
+    paddingTop: 15,
+    paddingRight: 20,
+  },
+  barterText:{
+    alignItems: 'center',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+
   containerOne: {
     flex: 1,
     backgroundColor: '#F7EFEC',
