@@ -24,15 +24,15 @@ export default class DiscoverScreen extends React.Component {
     title: 'Discover',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 60,
+      fontSize: 30,
       color: '#FFFFFF',
       textAlign: 'left',
       flex: 1,
     },
-    headerStyle: {height: 105},
+    headerStyle: {height: 100},
     headerBackground: (
       <Image
-        style={StyleSheet.absoluteFill}
+        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
         source={require('../assets/images/header.jpg')}
       />
     ),
@@ -40,7 +40,7 @@ export default class DiscoverScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <SearchBar 
         round 
         lightTheme 
@@ -89,7 +89,7 @@ export default class DiscoverScreen extends React.Component {
         </View>
         <View style={styles.containerFour}>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
