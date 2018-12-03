@@ -51,37 +51,36 @@ export default class DiscoverScreen extends React.Component {
 
 
         <View style={{flexDirection: 'row', marginBottom: 10}}>
-          
-          <View style={styles.buttonContainer}>
+        
+        <View style={styles.buttonContainer}>
 
-            <TouchableOpacity style={{ height: 100, margin: 10,
-              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,}} 
-              title="Button 1">
-            <Text style={{color: '#b5aaa5',}}> Markets </Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={{ height: 100, margin: 10,
+          backgroundColor: '#b5aaa5', alignItems: 'center', borderRadius: 20,}} 
+          title="Button 1">
+        <Text style={{color: '#FFFFFF',}}> Markets </Text>
+        </TouchableOpacity>
 
-          </View>
-          
-          <View style={styles.buttonContainer}>
+        </View>
+        <View style={styles.buttonContainer}>
 
-            <TouchableOpacity 
-              style={{ height: 100, margin: 10,
-              backgroundColor: '#DDDDDD', alignItems: 'center', 
-              borderRadius: 20}} 
+        <TouchableOpacity 
+          style={{ height: 100, margin: 10,
+          backgroundColor: '#DDDDDD', alignItems: 'center', 
+          borderRadius: 20}} 
 
-              title="Button 2">
+          title="Button 2">
 
-            <Text style={{color: '#FFFFFF',}}> Farmers </Text>
-            
-            </TouchableOpacity>
+        <Text style={{color: '#FFFFFF',}}> Farmers </Text>
+        
+        </TouchableOpacity>
 
-          </View>
+        </View>
 
         </View>
 
         <View style = {styles.textContainer}>
         <Text style= {{fontSize: 40, fontWeight: 'bold'}}> Today </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> What's happening around you today? </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Active Vendors </Text>
         </View>
 
 
@@ -90,18 +89,18 @@ export default class DiscoverScreen extends React.Component {
 
 
         <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Burlingame Market"/>
+        imageUri={require('../assets/images/Farmer_John.png')}
+        name="Farmer John"/>
 
 
         <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Palo Alto Market"/>
+        imageUri={require('../assets/images/Farmer_Tina.png')}
+        name="Farmer Tina"/>
 
 
         <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="San Mateo Market"/>
+        imageUri={require('../assets/images/Farmer_Stacy.png')}
+        name="Farmer Stacy"/>
         </ScrollView>
 
 
@@ -113,7 +112,7 @@ export default class DiscoverScreen extends React.Component {
         </View>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Markets you've viewed </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Farmers you've viewed </Text>
         </View>
 
         <ScrollView horizontal={true}
@@ -121,18 +120,9 @@ export default class DiscoverScreen extends React.Component {
 
 
         <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Burlingame Market"/>
+        imageUri={require('../assets/images/Farmer_John.png')}
+        name="Farmer John"/>
 
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Palo Alto Market"/>
-
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="San Mateo Market"/>
         </ScrollView>
 
 
