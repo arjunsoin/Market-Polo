@@ -10,6 +10,8 @@ import SettingsScreen from '../screens/SettingsScreen';
 import DiscoverScreen from '../screens/DiscoverScreen';
 import DiscoverScreenFarmer from '../screens/DiscoverScreenFarmer'
 import FarmerJohnProfile from '../screens/FarmerJohnProfile'
+import PendingMain from '../screens/PendingMain';
+import searchScreen from '../screens/searchScreen';
 
 
 const SplashStack = createStackNavigator({
