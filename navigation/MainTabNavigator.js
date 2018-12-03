@@ -8,10 +8,12 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import DiscoverScreen from '../screens/DiscoverScreen';
+import PendingMain from '../screens/PendingMain';
+import searchScreen from '../screens/searchScreen';
 
 
 const SplashStack = createStackNavigator({
-  Splash:   DiscoverScreen, 
+  Splash:   searchScreen, 
 });
 
 SplashStack.navigationOptions = {
