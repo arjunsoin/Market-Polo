@@ -13,7 +13,7 @@ import FarmerJohnProfile from '../screens/FarmerJohnProfile'
 
 
 const SplashStack = createStackNavigator({
-  Splash:   FarmerJohnProfile, 
+  Splash:   DiscoverScreenFarmer, 
 });
 
 SplashStack.navigationOptions = {
