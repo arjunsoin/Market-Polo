@@ -115,6 +115,7 @@ export default class DiscoverScreen extends React.Component {
               </View>  
             </TouchableOpacity>
           </View>  
+
         </View>
  
         <ScrollView horizontal={true}

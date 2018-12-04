@@ -12,10 +12,11 @@ import DiscoverScreenFarmer from '../screens/DiscoverScreenFarmer'
 import FarmerJohnProfile from '../screens/FarmerJohnProfile'
 import PendingMain from '../screens/PendingMain';
 import searchScreen from '../screens/searchScreen';
+import BarterScreen from '../screens/BarterScreen'
 
 
 const SplashStack = createStackNavigator({
-  Splash:   DiscoverScreenFarmer, 
+  Splash:   searchScreen, 
 });
 
 SplashStack.navigationOptions = {
