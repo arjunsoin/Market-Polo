@@ -16,7 +16,7 @@ import BarterScreen from '../screens/BarterScreen'
 import SignUpScreen from '../screens/SignUpScreen';
 
 const SplashStack = createStackNavigator({
-  Splash:   searchScreen, 
+  Splash:   BarterScreen, 
 });
 
 SplashStack.navigationOptions = {

@@ -39,122 +39,77 @@ export default class DiscoverScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <View style={{paddingTop: 40, flexDirection: 'row', marginBottom: 10, justifyContent: 'space-evenly'}}>
+
+
+
+        <View style={{paddingTop: 20, flexDirection: 'row', marginBottom: 10, justifyContent: 'center',}}>
           
           <View style = {styles.farmerMeProfile}>
             <Image
-              style={{height: 125, width: 125}}
+              style={{height: 75, width: 75, borderRadius: 10, borderWidth: 2,borderColor: 'black',}}
               source={require('../assets/images/Farmer_Me.png')}
               >
             </Image>
           </View>
-          
+
           <View style = {styles.farmerJohnProfile}>
             <Image
-              style={{height: 125, width: 125}}
+              style={{height: 75, width: 75, borderRadius: 10, paddingLeft: 30, borderRadius: 10, borderWidth: 2,borderColor: 'black',}}
               source={require('../assets/images/Farmer_John.png')}
               >
             </Image>
           </View>
         </View>
 
+        <View style={{}}>
+          <Text style= {{color: '#96594A', fontSize: 30, fontWeight: 'bold'}}> I send: </Text>
+        </View>
+
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
+
+
+          <Category 
+          imageUri={require('../assets/images/home.jpg')}
+          name="Burlingame Market"/>
+
+
+          <Category 
+          imageUri={require('../assets/images/home.jpg')}
+          name="Palo Alto Market"/>
+
+
+          <Category 
+          imageUri={require('../assets/images/home.jpg')}
+          name="San Mateo Market"/>
+        </ScrollView>
 
         <View style={{flexDirection: 'row', marginBottom: 10}}>
-          
-          <View style={styles.buttonContainer}>
-
-            <TouchableOpacity 
-              style={{ height: 100, margin: 10,
-              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,}} 
-              title="Button 1"
-
-              >
-              <Text style={{color: '#b5aaa5',}}> Markets </Text>
-              
-            </TouchableOpacity>
-
-          </View>
-
-          <View style={styles.buttonContainer}>
-
-            <TouchableOpacity 
-              style={{ height: 100, margin: 10,
-              backgroundColor: '#DDDDDD', alignItems: 'center', 
-              borderRadius: 20}} 
-
-              title="Button 2">
-
-            <Text style={{color: '#FFFFFF',}}> Farmers </Text>
-            
-            </TouchableOpacity>
-
-          </View>
 
         </View>
-
-        <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 40, fontWeight: 'bold'}}> Today </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> What's happening around you today? </Text>
+        
+        <View style={{}}>
+          <Text style= {{color: '#96594A',fontSize: 30, fontWeight: 'bold'}}> I ask for: </Text>
         </View>
+       
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
 
 
-        <ScrollView horizontal={true}
-        showsHorizontalScrollIndicator={false}>
+          <Category 
+          imageUri={require('../assets/images/home.jpg')}
+          name="Burlingame Market"/>
 
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Burlingame Market"/>
+          <Category 
+          imageUri={require('../assets/images/home.jpg')}
+          name="Palo Alto Market"/>
 
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Palo Alto Market"/>
-
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="San Mateo Market"/>
+          <Category 
+          imageUri={require('../assets/images/home.jpg')}
+          name="San Mateo Market"/>
         </ScrollView>
 
 
-        <View style={styles.containerThree}>
-                            
-
-        </View>
-        <View style={styles.containerFour}>
-        </View>
-
-        <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Markets you've viewed </Text>
-        </View>
-
-        <ScrollView horizontal={true}
-        showsHorizontalScrollIndicator={false}>
-
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Burlingame Market"/>
-
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Palo Alto Market"/>
-
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="San Mateo Market"/>
-        </ScrollView>
-
-
-        <View style={styles.containerThree}>
-                            
-
-        </View>
-        <View style={styles.containerFour}>
-        </View>
 
       </ScrollView>
     );
@@ -167,8 +122,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7EFEC',
   },
   farmerMeProfile: {
+    paddingRight: 30,
   },
   farmerJohnProfile: {
+    paddingLeft: 30,
   },
   containerOne: {
     flex: 1,
@@ -206,4 +163,5 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
+
 });
