@@ -16,7 +16,7 @@ import BarterScreen from '../screens/BarterScreen'
 
 
 const SplashStack = createStackNavigator({
-  Splash:   PendingMain, 
+  Splash:   searchScreen, 
 });
 
 SplashStack.navigationOptions = {
