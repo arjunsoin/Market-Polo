@@ -13,11 +13,10 @@ import FarmerJohnProfile from '../screens/FarmerJohnProfile'
 import PendingMain from '../screens/PendingMain';
 import searchScreen from '../screens/searchScreen';
 import BarterScreen from '../screens/BarterScreen'
-
+import SignUpScreen from '../screens/SignUpScreen';
 
 const SplashStack = createStackNavigator({
   Splash:   searchScreen, 
->>>>>>> dcf891a129015cc7c67e7c7553c96b7313a9f286
 });
 
 SplashStack.navigationOptions = {
