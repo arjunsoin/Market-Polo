@@ -15,7 +15,7 @@ import searchScreen from '../screens/searchScreen';
 
 
 const SplashStack = createStackNavigator({
-  Splash:   FarmerJohnProfile, 
+  Splash:   searchScreen, 
 });
 
 SplashStack.navigationOptions = {
