@@ -7,81 +7,75 @@ export default class PendingMain extends React.Component {
     title: 'Pending',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 60,
+      fontSize: 40,
       color: '#FFFFFF',
       textAlign: 'left',
       flex: 1,
     },
-    headerStyle: {height: 105},
+    headerStyle: {height: 75},
     headerBackground: (
       <Image
-        style={StyleSheet.absoluteFill}
+        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
         source={require('../assets/images/header.jpg')}
       />
     ),
   };
 
-
   render() {
     return (
 
-    <View style = {styles.container}>
-
+    <ScrollView style = {styles.container}>
 
       <View style = {styles.containerOne}>
 
         <View style={styles.textContainer}>
           <Text style= {{fontSize: 50, fontWeight: 'bold'}}> Barters </Text>
-
-
-          <View style= {{flex: 1,}}>
-          </View>
         </View>
 
 
-        <ScrollView showsVerticalScrollIndicator={true} style = {{height: 140, 
+        <ScrollView showsVerticalScrollIndicator={true} style = {{height: 200, 
           marginBottom: 50}}>
-        <View style = {styles.farmerSnippet1}>
+          <View style = {styles.farmerSnippet1}>
 
-          <View> 
-            <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
-              borderColor: '#000', borderWidth: 5}}
-            source={require('../assets/images/header.jpg')}/>
+            <View> 
+              <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
+                borderColor: '#000', borderWidth: 5}}
+              source={require('../assets/images/header.jpg')}/>
+            </View>
+
+             <View> 
+
+              <Text h1 style= {{fontSize: 30, color: '#96594A', 
+              left: 45}}> Farmer John </Text>
+              <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
+              margin: 10, left: 40, flexWrap: "wrap"}}> You Receive: Apples   |   You Send: Pears </Text>
+              <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+              left: 50, flexWrap: "wrap"}}> Note: Hi John! I’m trying to get my hands on... </Text>
+
+            </View>
           </View>
 
-           <View> 
+          <View style = {styles.farmerSnippet1}>
 
-            <Text h1 style= {{fontSize: 30, color: '#96594A', 
-            left: 45}}> Farmer John </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Apples    |    You Send: Pears </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#A9A9A9', 
-            margin: 10, left: 40,}}> Note: Hi John! I’m trying to get my hands on... </Text>
+            <View> 
+              <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
+                borderColor: '#000', borderWidth: 5}}
+              source={require('../assets/images/header.jpg')}/>
+            </View>
 
+             <View> 
+
+              <Text h1 style= {{fontSize: 30, color: '#96594A', 
+              left: 45}}> Farmer Tina </Text>
+              <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
+              margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
+              <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+              left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
+
+            </View>
           </View>
-        </View>
-
-        <View style = {styles.farmerSnippet1}>
-
-          <View> 
-            <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
-              borderColor: '#000', borderWidth: 5}}
-            source={require('../assets/images/header.jpg')}/>
-          </View>
-
-           <View> 
-
-            <Text h1 style= {{fontSize: 30, color: '#96594A', 
-            left: 45}}> Farmer Tina </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Yogurt    |    You Send: Chicken </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#A9A9A9', 
-            margin: 10, left: 40,}}> Note: Hey Tina! I really want some dairy on... </Text>
-
-          </View>
-        </View>
         </ScrollView>
-      </View>
+        </View>
 
       <View style = {styles.containerTwo}>
 
@@ -91,7 +85,7 @@ export default class PendingMain extends React.Component {
           </View>
         </View> 
 
-        <ScrollView showsVerticalScrollIndicator={true} style = {{height: 140, 
+        <ScrollView showsVerticalScrollIndicator={true} style = {{height: 200, 
           marginBottom: 60}}>
 
         <View style = {styles.farmerSnippet1}>
@@ -107,9 +101,9 @@ export default class PendingMain extends React.Component {
             <Text h1 style= {{fontSize: 30, color: '#96594A', 
             left: 45}}> Farmer John </Text>
             <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Apples    |    You Send: Pears </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#A9A9A9', 
-            margin: 10, left: 40,}}> Note: Hi John! I’m trying to get my hands on... </Text>
+            margin: 10, left: 40,}}> You Receive: Apples  |  You Send: Pears </Text>
+            <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+            left: 50,}}> Note: Hi John! I’m trying to get my hands on... </Text>
 
           </View>
 
@@ -128,9 +122,9 @@ export default class PendingMain extends React.Component {
             <Text h1 style= {{fontSize: 30, color: '#96594A', 
             left: 45}}> Farmer Tina </Text>
             <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Yogurt    |    You Send: Chicken </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#A9A9A9', 
-            margin: 10, left: 40,}}> Note: Hey Tina! I really want some dairy on... </Text>
+            margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
+            <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+            left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
 
           </View>
 
@@ -149,9 +143,9 @@ export default class PendingMain extends React.Component {
             <Text h1 style= {{fontSize: 30, color: '#96594A', 
             left: 45}}> Farmer Tina </Text>
             <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Yogurt    |    You Send: Chicken </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#A9A9A9', 
-            margin: 10, left: 40,}}> Note: Hey Tina! I really want some dairy on... </Text>
+            margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
+            <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+            left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
 
           </View>
 
@@ -161,7 +155,7 @@ export default class PendingMain extends React.Component {
 
       </View>
       
-    </View>
+    </ScrollView>
     );
   }
 }
