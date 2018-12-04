@@ -10,7 +10,6 @@ import {
   View,
 } from 'react-native';
 
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { SearchBar, Button} from 'react-native-elements';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import { WebBrowser } from 'expo';
@@ -18,21 +17,9 @@ import { MonoText } from '../components/StyledText';
 import Category from '../components/Category'
 import DiscoverScreenFarmer from './DiscoverScreenFarmer'
 
-
-// import { createStackNavigator, createAppContainer } from 'react-navigation'; 
-
-// const RootStack = createStackNavigator(
-// {
-//     Farmer: DiscoverScreenFarmer,
-//   },
-// );
-
-// const AppContainer = createAppContainer(RootStack);
-
-
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
-    title: 'Discover',
+    title: 'Barter',
     headerTitleStyle: {
       fontWeight: 'bold',
       fontSize: 40,
@@ -52,17 +39,24 @@ export default class DiscoverScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-
-
-        <SearchBar 
-        round 
-        lightTheme 
-        placeholder='Search for all...' 
-        containerStyle={{backgroundColor: '#F7EFEC',}}
-        onChangeText={
-          () => {Alert.alert('You tapped the button!');
-        }}
-        />
+        <View style={{paddingTop: 40, flexDirection: 'row', marginBottom: 10, justifyContent: 'space-evenly'}}>
+          
+          <View style = {styles.farmerMeProfile}>
+            <Image
+              style={{height: 125, width: 125}}
+              source={require('../assets/images/Farmer_Me.png')}
+              >
+            </Image>
+          </View>
+          
+          <View style = {styles.farmerJohnProfile}>
+            <Image
+              style={{height: 125, width: 125}}
+              source={require('../assets/images/Farmer_John.png')}
+              >
+            </Image>
+          </View>
+        </View>
 
 
         <View style={{flexDirection: 'row', marginBottom: 10}}>
@@ -73,9 +67,7 @@ export default class DiscoverScreen extends React.Component {
               style={{ height: 100, margin: 10,
               backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,}} 
               title="Button 1"
-              onPress={
-                () => {Alert.alert('You tapped the button!');
-              }}
+
               >
               <Text style={{color: '#b5aaa5',}}> Markets </Text>
               
@@ -89,9 +81,7 @@ export default class DiscoverScreen extends React.Component {
               style={{ height: 100, margin: 10,
               backgroundColor: '#DDDDDD', alignItems: 'center', 
               borderRadius: 20}} 
-              onPress={
-                () => this.props.navigation.navigate('DiscoverFarmer')
-              }
+
               title="Button 2">
 
             <Text style={{color: '#FFFFFF',}}> Farmers </Text>
@@ -175,6 +165,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F7EFEC',
+  },
+  farmerMeProfile: {
+  },
+  farmerJohnProfile: {
   },
   containerOne: {
     flex: 1,

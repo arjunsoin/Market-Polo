@@ -115,8 +115,21 @@ export default class DiscoverScreen extends React.Component {
               </View>  
             </TouchableOpacity>
           </View>  
+
         </View>
  
+        <ScrollView horizontal={true}
+        showsHorizontalScrollIndicator={false}>
+
+        <Category 
+        name="Burlingame Market"/>
+
+        <Category 
+        name="Palo Alto Market"/>
+
+        <Category 
+        name="San Mateo Market"/>
+        </ScrollView>
 
       </ScrollView>
     );

@@ -9,6 +9,8 @@ import {
   View,
 } from 'react-native';
 
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import { SearchBar, Button} from 'react-native-elements';
 
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
