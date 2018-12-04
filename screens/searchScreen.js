@@ -3,8 +3,26 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'rea
 import SearchInput, { createFilter } from 'react-native-search-filter';
 import emails from '../data/farmerData';
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
+import { Icon } from 'react-native-elements';
 
 export default class App extends Component {
+  static navigationOptions = {
+    title: 'Discover',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 40,
+      color: '#FFFFFF',
+      textAlign: 'left',
+      flex: 1,
+    },
+    headerStyle: {height: 75},
+    headerBackground: (
+      <Image
+        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
+        source={require('../assets/images/header.jpg')}
+      />
+    ),
+  };
  constructor(props) {
     super(props);
     this.state = {
@@ -27,13 +45,21 @@ export default class App extends Component {
           {filteredEmails.map(email => {
             return (
               <TouchableOpacity onPress={()=>alert(email.user.name)} key={email.id} style={styles.emailItem}>
-                <View>
-                  <Text>{email.user.name}</Text>
-                  <Text style={styles.emailSubject}>{email.subject}</Text>
-                  <Image source={require('../assets/images/header.jpg')}
-                  style = {{height: 100, width: 100, borderRadius: 40, left: 150, 
-                  borderColor: '#000', borderWidth: 5, marginBottom: 50}}
-                  />
+                <View style= {{flexDirection: 'row'}}>
+                  <View>
+                    <Image source={require('../assets/images/header.jpg')}
+                    style = {{height: 50, width: 50, borderRadius: 25, 
+                    borderColor: '#000', borderWidth: 5,}}
+                    />
+                  </View>
+                  <View style = {{left: 20}}>
+                    <Text style = {{fontSize: 25}}>{email.user.name}</Text>
+                    <Text style={styles.emailSubject}>{email.subject}</Text>
+                  </View>
+                  <View style = {{left: 20}}>
+                    <Icon
+                    name="forward"/>
+                  </View>
                 </View>
               </TouchableOpacity>
             )
@@ -56,7 +82,8 @@ const styles = StyleSheet.create({
     padding: 10
   },
   emailSubject: {
-    color: 'rgba(0,0,0,0.5)'
+    color: 'rgba(0,0,0,0.5)', 
+    fontSize: 20, 
   },
   searchInput:{
     padding: 10,
