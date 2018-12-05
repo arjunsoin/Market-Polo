@@ -15,25 +15,45 @@ import PendingMain from '../screens/PendingMain';
 import searchScreen from '../screens/searchScreen';
 import BarterScreen from '../screens/BarterScreen'
 import SignUpScreen from '../screens/SignUpScreen';
+import CarpoolScreen from '../screens/CarpoolScreen';
 
 const FarmerStack = createStackNavigator({
-  Farmer: FarmerJohnProfile,
+  Farmer: {
+    screen: CarpoolScreen,
+
+  }
 })
+
+FarmerStack.navigationOptions = {
+  tabBarLabel: 'Farmer',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+}
 
 const PendingStack = createStackNavigator({
   Pending: PendingMain,
 })
 
+PendingStack.navigationOptions = {
+  tabBarLabel: 'Pending',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+}
+
 const SplashStack = createStackNavigator({
-<<<<<<< HEAD
-  Splash:   BarterScreen, 
-=======
-  Splash: DiscoverScreen,
->>>>>>> 658c12dbf75a1e3beca96c8b034fe3175be96474
+  Splash:   DiscoverScreen, 
 });
 
 SplashStack.navigationOptions = {
-  tabBarLabel: 'Splash',
+  tabBarLabel: 'Discover',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
