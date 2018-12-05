@@ -42,6 +42,7 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
@@ -70,9 +71,7 @@ export default class DiscoverScreen extends React.Component {
           
           <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
+              onPress={() => navigate('Pending')}
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",
