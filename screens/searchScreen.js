@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
 import SearchInput, { createFilter } from 'react-native-search-filter';
+import { StackNavigator } from 'react-navigation';
 import emails from '../data/farmerData';
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
 import { Icon } from 'react-native-elements';

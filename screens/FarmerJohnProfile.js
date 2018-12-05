@@ -18,7 +18,9 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
-import Category from '../components/Category'
+import Category from '../components/Category';
+
+import { StackNavigator } from 'react-navigation';
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -83,7 +85,6 @@ export default class DiscoverScreen extends React.Component {
                 shadowOpacity: 0.5,
                 shadowRadius: 5,
               }}
-
             >
               <View style={styles.barterText}>    
                 <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Barter! </Text>

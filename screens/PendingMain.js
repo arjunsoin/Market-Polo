@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements';
+import { StackNavigator } from 'react-navigation';
 
 export default class PendingMain extends React.Component {
   static navigationOptions = {

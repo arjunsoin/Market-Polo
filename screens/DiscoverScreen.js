@@ -9,15 +9,25 @@ import {
   View,
 } from 'react-native';
 
+import { StackNavigator } from 'react-navigation';
+
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+
 import { SearchBar, Button} from 'react-native-elements';
 
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 
 import { WebBrowser } from 'expo';
 
+import HomeScreen from '../screens/HomeScreen';
+
 import { MonoText } from '../components/StyledText';
 
-import Category from '../components/Category'
+import Category from '../components/Category';
+
+import searchScreen from '../screens/searchScreen';
+import FarmerJohnProfile from '../screens/FarmerJohnProfile';
+
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -39,6 +49,7 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
@@ -67,9 +78,10 @@ export default class DiscoverScreen extends React.Component {
             <TouchableOpacity 
               style={{ height: 100, margin: 10,
               backgroundColor: '#DDDDDD', alignItems: 'center', 
-              borderRadius: 20}} 
-
-              title="Button 2">
+              borderRadius: 20}}
+              title="Button 2"
+              onPress={() => navigate('Pending')}
+              >
 
             <Text style={{color: '#FFFFFF',}}> Farmers </Text>
             
@@ -147,6 +159,7 @@ export default class DiscoverScreen extends React.Component {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
