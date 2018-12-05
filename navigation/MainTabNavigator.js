@@ -17,12 +17,11 @@ import BarterScreen from '../screens/BarterScreen'
 import SignUpScreen from '../screens/SignUpScreen';
 import CarpoolScreen from '../screens/CarpoolScreen';
 
-const FarmerStack = createStackNavigator({
-  Farmer: {
-    screen: CarpoolScreen,
-
-  }
-})
+const SplashStack = createStackNavigator({
+  Splash: DiscoverScreen,
+  Pending: PendingMain,
+  Farmer: FarmerJohnProfile
+});
 
 FarmerStack.navigationOptions = {
   tabBarLabel: 'Farmer',
@@ -48,9 +47,6 @@ PendingStack.navigationOptions = {
   ),
 }
 
-const SplashStack = createStackNavigator({
-  Splash:   DiscoverScreen, 
-});
 
 SplashStack.navigationOptions = {
   tabBarLabel: 'Discover',
@@ -61,6 +57,7 @@ SplashStack.navigationOptions = {
     />
   ),
 };
+
 
 const HomeStack = createStackNavigator({
   Home: searchScreen,
@@ -114,6 +111,4 @@ export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
-  FarmerStack,
-  PendingStack
 });

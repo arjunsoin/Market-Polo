@@ -67,6 +67,7 @@ export default class DiscoverScreen extends React.Component {
 
 
         <SearchBar 
+        onPress={() => navigate('Farmer')}
         round 
         lightTheme 
         placeholder='Search for all...' 
@@ -100,11 +101,11 @@ export default class DiscoverScreen extends React.Component {
             <TouchableOpacity 
               style={{ height: 100, margin: 10,
               backgroundColor: '#DDDDDD', alignItems: 'center', 
-              borderRadius: 20}} 
-              onPress={
-                () => this.props.navigation.navigate('DiscoverFarmer')
-              }
-              title="Button 2">
+              borderRadius: 20}}
+              title="Button 2"
+              onPress={() => navigate('Farmer')}
+              >
+
 
             <Text style={{color: '#FFFFFF',}}> Farmers </Text>
             
