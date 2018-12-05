@@ -10,7 +10,8 @@ import {
   View,
 } from 'react-native';
 
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+
+import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { SearchBar, Button} from 'react-native-elements';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import { WebBrowser } from 'expo';
@@ -28,6 +29,16 @@ import DiscoverScreenFarmer from './DiscoverScreenFarmer'
 // );
 
 // const AppContainer = createAppContainer(RootStack);
+
+import HomeScreen from '../screens/HomeScreen';
+
+import { MonoText } from '../components/StyledText';
+
+import Category from '../components/Category';
+
+import searchScreen from '../screens/searchScreen';
+import FarmerJohnProfile from '../screens/FarmerJohnProfile';
+
 
 
 export default class DiscoverScreen extends React.Component {
@@ -50,6 +61,7 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
@@ -170,6 +182,7 @@ export default class DiscoverScreen extends React.Component {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {

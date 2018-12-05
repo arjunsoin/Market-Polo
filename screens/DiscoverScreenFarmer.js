@@ -19,7 +19,9 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
-import Category from '../components/Category'
+import Category from '../components/Category';
+
+import { StackNavigator } from 'react-navigation';
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {

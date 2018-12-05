@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 import SplashScreen from '../screens/SplashScreen';
 import TabBarIcon from '../components/TabBarIcon';
@@ -15,8 +16,20 @@ import searchScreen from '../screens/searchScreen';
 import BarterScreen from '../screens/BarterScreen'
 import SignUpScreen from '../screens/SignUpScreen';
 
+const FarmerStack = createStackNavigator({
+  Farmer: FarmerJohnProfile,
+})
+
+const PendingStack = createStackNavigator({
+  Pending: PendingMain,
+})
+
 const SplashStack = createStackNavigator({
+<<<<<<< HEAD
   Splash:   BarterScreen, 
+=======
+  Splash: DiscoverScreen,
+>>>>>>> 658c12dbf75a1e3beca96c8b034fe3175be96474
 });
 
 SplashStack.navigationOptions = {
@@ -30,7 +43,7 @@ SplashStack.navigationOptions = {
 };
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: searchScreen,
 });
 
 
@@ -81,4 +94,6 @@ export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  FarmerStack,
+  PendingStack
 });
