@@ -22,7 +22,7 @@ import SanMateoMarket from '../screens/SanMateoMarket'
 import BurlingameMarket from '../screens/BurlingameMarket'
 
 const SplashStack = createStackNavigator({
-  Discover: DiscoverScreen,
+  Discover: PaloAltoMarket,
   Pending: PendingMain,
   FarmerJohn: FarmerJohnProfile,
   DiscoverFarmer: DiscoverScreenFarmer,
