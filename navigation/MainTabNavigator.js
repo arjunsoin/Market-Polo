@@ -17,6 +17,9 @@ import searchScreen from '../screens/searchScreen';
 import BarterScreen from '../screens/BarterScreen'
 import SignUpScreen from '../screens/SignUpScreen';
 import CarpoolScreen from '../screens/CarpoolScreen';
+import PaloAltoMarket from '../screens/PaloAltoMarket'
+import SanMateoMarket from '../screens/SanMateoMarket'
+import BurlingameMarket from '../screens/BurlingameMarket'
 
 const SplashStack = createStackNavigator({
   Discover: DiscoverScreen,
