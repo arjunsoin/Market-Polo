@@ -45,6 +45,8 @@ export default class DiscoverScreen extends React.Component {
       textAlign: 'left',
       flex: 1,
     },
+    headerTintColor: 'white',
+    headerLeft: null,
     headerStyle: {height: 75},
     headerBackground: (
       <Image
