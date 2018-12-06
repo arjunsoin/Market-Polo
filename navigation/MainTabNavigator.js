@@ -11,6 +11,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import DiscoverScreen from '../screens/DiscoverScreen';
 import DiscoverScreenFarmer from '../screens/DiscoverScreenFarmer'
 import FarmerJohnProfile from '../screens/FarmerJohnProfile'
+import FarmerMeProfile from '../screens/FarmerMeProfile'
 import PendingMain from '../screens/PendingMain';
 import searchScreen from '../screens/searchScreen';
 import BarterScreen from '../screens/BarterScreen'
@@ -18,9 +19,10 @@ import SignUpScreen from '../screens/SignUpScreen';
 import CarpoolScreen from '../screens/CarpoolScreen';
 
 const SplashStack = createStackNavigator({
-  Splash: DiscoverScreen,
+  Discover: DiscoverScreen,
   Pending: PendingMain,
-  Farmer: FarmerJohnProfile
+  FarmerJohn: FarmerJohnProfile,
+  DiscoverFarmer: DiscoverScreenFarmer
 });
 
 SplashStack.navigationOptions = {
@@ -65,7 +67,7 @@ const HomeStack = createStackNavigator({
 
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Pending',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -79,11 +81,11 @@ HomeStack.navigationOptions = {
 };
 
 const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+  Links: FarmerMeProfile,
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: 'Me',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -108,7 +110,6 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   SplashStack,
-  HomeStack,
+  PendingStack,
   LinksStack,
-  SettingsStack,
 });

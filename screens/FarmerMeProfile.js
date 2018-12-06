@@ -48,14 +48,14 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 30}}> Farmer John </Text>        
+        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 30}}> Farmer Me </Text>        
         </View>
         
         <View style={styles.profilePic}>
 
           <Image 
             style={{flex:1, height: 300, width: 300}}
-            source={require('../assets/images/Farmer_John.png')}
+            source={require('../assets/images/Farmer_Me.png')}
           />
         </View>
 
@@ -66,56 +66,6 @@ export default class DiscoverScreen extends React.Component {
               I wanted others around me to experience how wonderful unsulfured apricots taste.
               </Text>
           </View>
-        </View>
-       
-        <View style={{flexDirection: 'row', marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between'}}>
-          
-          <View style={styles.barterButton}>    
-            <TouchableOpacity
-              onPress={() => navigate('Pending')}
-              style={{
-                backgroundColor: "#96594A",
-                borderColor: "transparent",
-                width: 125,
-                height: 50,
-                borderWidth: 0,
-                borderRadius: 20,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.5,
-                shadowRadius: 5,
-              }}
-            >
-              <View style={styles.barterText}>    
-                <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Barter! </Text>
-              </View>  
-            </TouchableOpacity>
-          </View>  
-
-          <View style={styles.carpoolButton}>    
-            <TouchableOpacity
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
-              style={{
-                backgroundColor: "#96594A",
-                borderColor: "transparent",
-                width: 125,
-                height: 50,
-                borderWidth: 0,
-                borderRadius: 20,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.5,
-                shadowRadius: 5,
-              }}
-
-            >
-              <View style={styles.barterText}>    
-                <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Carpool! </Text>
-              </View>  
-            </TouchableOpacity>
-          </View>  
         </View>
  
         <ScrollView horizontal={true}

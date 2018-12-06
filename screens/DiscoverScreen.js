@@ -99,7 +99,7 @@ export default class DiscoverScreen extends React.Component {
               backgroundColor: '#DDDDDD', alignItems: 'center', 
               borderRadius: 20}}
               title="Button 2"
-              onPress={() => navigate('Farmer')}
+              onPress={() => navigate('DiscoverFarmer')}
               >
 
 

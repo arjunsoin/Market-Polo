@@ -109,7 +109,27 @@ export default class DiscoverScreen extends React.Component {
           name="San Mateo Market"/>
         </ScrollView>
 
-
+        <View style={styles.barterButton}>    
+            <TouchableOpacity
+              onPress={() => navigate('Pending')}
+              style={{
+                backgroundColor: "#96594A",
+                borderColor: "transparent",
+                width: 125,
+                height: 50,
+                borderWidth: 0,
+                borderRadius: 20,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+              }}
+            >
+              <View style={styles.barterText}>    
+                <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Barter! </Text>
+              </View>  
+            </TouchableOpacity>
+          </View>  
 
       </ScrollView>
     );
@@ -120,6 +140,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F7EFEC',
+  },
+  barterButton:{
+    paddingTop: 15,
+    paddingLeft: 20,
+  },
+  barterText:{
+    alignItems: 'center',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    justifyContent: 'center',
+    flex: 1,
   },
   farmerMeProfile: {
     paddingRight: 30,

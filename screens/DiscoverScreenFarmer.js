@@ -45,6 +45,7 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
@@ -62,7 +63,9 @@ export default class DiscoverScreen extends React.Component {
 
         <TouchableOpacity style={{ height: 100, margin: 10,
           backgroundColor: '#b5aaa5', alignItems: 'center', borderRadius: 20,}} 
-          title="Button 1">
+          title="Button 1"
+          onPress={() => navigate('Discover')}
+          >
         <Text style={{color: '#FFFFFF',}}> Markets </Text>
         </TouchableOpacity>
 
