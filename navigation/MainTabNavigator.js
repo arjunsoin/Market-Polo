@@ -23,7 +23,7 @@ const SplashStack = createStackNavigator({
   Farmer: FarmerJohnProfile
 });
 
-FarmerStack.navigationOptions = {
+SplashStack.navigationOptions = {
   tabBarLabel: 'Farmer',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
