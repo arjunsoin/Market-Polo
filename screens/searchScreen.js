@@ -3,27 +3,17 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'rea
 import SearchInput, { createFilter } from 'react-native-search-filter';
 import { StackNavigator } from 'react-navigation';
 import emails from '../data/farmerData';
+import { SearchBar, Button} from 'react-native-elements';
 const KEYS_TO_FILTERS = ['user.name', 'subject'];
 import { Icon } from 'react-native-elements';
 
 export default class App extends Component {
   static navigationOptions = {
-    title: 'Discover',
+    title: 'Search',
     headerTitleStyle: {
-      fontWeight: 'bold',
-      fontSize: 40,
       color: '#FFFFFF',
-      textAlign: 'left',
-      flex: 1,
     },
     headerTintColor: 'white',
-    headerStyle: {height: 75},
-    headerBackground: (
-      <Image
-        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
-        source={require('../assets/images/header.jpg')}
-      />
-    ),
   };
  constructor(props) {
     super(props);
@@ -36,22 +26,30 @@ export default class App extends Component {
   }
   render() {
     const filteredEmails = emails.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <SearchInput 
-          onChangeText={(term) => { this.searchUpdated(term) }} 
-          style={styles.searchInput}
-          placeholder="Search for farmers here.."
-          />
-        <ScrollView>
+
+        <SearchBar 
+          round 
+          lightTheme 
+          placeholder='Search for all...' 
+          containerStyle={{backgroundColor: '#F7EFEC',}}
+          onChangeText={
+            (term) => { this.searchUpdated(term) }
+          }
+        />
+
+        <ScrollView style= {{backgroundColor: '#F7EFEC',}}>
           {filteredEmails.map(email => {
             return (
-              <TouchableOpacity onPress={()=>alert(email.user.name)} key={email.id} style={styles.emailItem}>
+              <TouchableOpacity onPress={() => navigate(email.navKey)} key={email.id} style={styles.emailItem}>
+
                 <View style= {{flexDirection: 'row'}}>
                   <View>
-                    <Image source={require('../assets/images/header.jpg')}
+                    <Image source={email.image}
                     style = {{height: 50, width: 50, borderRadius: 25, 
-                    borderColor: '#000', borderWidth: 5,}}
+                    borderColor: '#000', borderWidth: 3,}}
                     />
                   </View>
                   <View style = {{left: 20}}>
@@ -59,8 +57,6 @@ export default class App extends Component {
                     <Text style={styles.emailSubject}>{email.subject}</Text>
                   </View>
                   <View style = {{left: 20}}>
-                    <Icon
-                    name="forward"/>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -75,8 +71,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7EFEC',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
   emailItem:{
     borderBottomWidth: 1,
@@ -89,7 +84,8 @@ const styles = StyleSheet.create({
   },
   searchInput:{
     padding: 10,
-    borderColor: '#DDD',
-    borderWidth: 3
+    backgroundColor: '#FFF',
+    borderRadius: 5,
+
   }
 });

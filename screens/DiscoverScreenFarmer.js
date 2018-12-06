@@ -54,7 +54,10 @@ export default class DiscoverScreen extends React.Component {
         round 
         lightTheme 
         placeholder='Search for all...' 
-        containerStyle={{backgroundColor: '#F7EFEC',}}/>
+        containerStyle={{backgroundColor: '#F7EFEC',}}
+        onChangeText={
+          () => navigate('Search')
+        }/>
 
         
 
@@ -62,8 +65,12 @@ export default class DiscoverScreen extends React.Component {
         
         <View style={styles.buttonContainer}>
 
-        <TouchableOpacity style={{ height: 100, margin: 10,
-          backgroundColor: '#DDDDDD', alignItems: 'center', borderRadius: 20,}} 
+        <TouchableOpacity style={{ height: 25, margin: 10,
+          backgroundColor: '#DDDDDD', alignItems: 'center', borderRadius: 20, textAlignVertical: 'center',justifyContent: 'center',
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.5,
+          shadowRadius: 5,}} 
           title="Button 1"
           onPress={() => navigate('Discover')}
           >
@@ -74,9 +81,13 @@ export default class DiscoverScreen extends React.Component {
         <View style={styles.buttonContainer}>
 
         <TouchableOpacity 
-          style={{ height: 100, margin: 10,
-          backgroundColor: '#FFFFFF', alignItems: 'center', 
-          borderRadius: 20}} 
+          style={{ height: 25, margin: 10,
+          backgroundColor: '#FFFFFF', alignItems: 'center', textAlignVertical: 'center',justifyContent: 'center',
+          borderRadius: 20,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.5,
+          shadowRadius: 5,}} 
 
           title="Button 2">
 
@@ -89,8 +100,9 @@ export default class DiscoverScreen extends React.Component {
         </View>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 40, fontWeight: 'bold'}}> Today </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Active Vendors </Text>
+        <Text style= {{fontSize: 26, fontWeight: 'bold', color: '#96594A'}}>  Browse Vendors </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginTop: 5, marginLeft:10, paddingBottom: 15, color: '#96594A'}}> Active Vendors </Text>
+
         </View>
 
 
@@ -99,18 +111,21 @@ export default class DiscoverScreen extends React.Component {
 
 
         <Category 
-        imageUri={require('../assets/images/Farmer_John.png')}
-        name="Farmer John"/>
+        imageUri={require('../assets/images/Chris_Montgomery_Card.png')}
+        name="Chris Montgomery">
+        </Category>
+
+        
 
 
         <Category 
-        imageUri={require('../assets/images/Farmer_Tina.png')}
-        name="Farmer Tina"/>
+        imageUri={require('../assets/images/Clarissa_Woods_Card.png')}
+        name="Clarissa Woods"/>
 
 
         <Category 
-        imageUri={require('../assets/images/Farmer_Stacy.png')}
-        name="Farmer Stacy"/>
+        imageUri={require('../assets/images/Evan_Stokes_Card.png')}
+        name="Evan Stokes"/>
         </ScrollView>
 
 
@@ -122,7 +137,7 @@ export default class DiscoverScreen extends React.Component {
         </View>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Farmers you've viewed </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginTop: 20, marginLeft:10, paddingBottom: 15, color: '#96594A'}}> Most Visited Vendors</Text>
         </View>
 
         <ScrollView horizontal={true}
@@ -130,15 +145,18 @@ export default class DiscoverScreen extends React.Component {
 
 
         <Category 
-        imageUri={require('../assets/images/Farmer_John.png')}
-        name="Farmer John"/>
+        imageUri={require('../assets/images/Ian_Pratt_Card.png')}
+        name="Ian Pratt"/>
+
+        <Category 
+        imageUri={require('../assets/images/Jimothy_Neal_Card.png')}
+        name="Jimothy Neal"/>
 
         </ScrollView>
 
 
         <View style={styles.containerThree}>
-                            
-
+                          
         </View>
         <View style={styles.containerFour}>
         </View>
@@ -186,6 +204,15 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: 'center',
   },
+  rectangle: {
+    flex: 1,
+    alignItems: 'center',
+    width: 110 * 2,
+    height: 180,
+    backgroundColor: '#FFFFFF',
+    left: 10,
+    margin: 15
+},
   contentContainer: {
     paddingTop: 30,
   },

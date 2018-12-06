@@ -22,6 +22,7 @@ import Category from '../components/Category';
 import ProfileCategory from '../components/ProfileCategory'
 
 import { StackNavigator } from 'react-navigation';
+import FarmerSanthuPic from '../assets/images/Santhu.jpg'
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -48,14 +49,14 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Terry McGuire </Text>        
+        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Santhu Vista </Text>        
         </View>
         
         <View style={styles.profilePic}>
 
           <Image 
             style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: 'black',}}
-            source={require('../assets/images/Terry.jpg')}
+            source={require('../assets/images/Santhu.jpg')}
           />
         </View>
 
@@ -72,7 +73,13 @@ export default class DiscoverScreen extends React.Component {
           
           <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => navigate('Pending')}
+              onPress={
+                () => navigate('Barter',{
+                  farmerName: 'Farmer Santhu',
+                  imageName: FarmerSanthuPic,
+                  otherParam: 'Ben is the best',
+                })
+            }
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

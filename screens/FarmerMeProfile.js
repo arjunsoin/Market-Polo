@@ -19,6 +19,7 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 import Category from '../components/Category';
+import ProfileCategory from '../components/ProfileCategory'
 
 import { StackNavigator } from 'react-navigation';
 
@@ -33,7 +34,6 @@ export default class DiscoverScreen extends React.Component {
       flex: 1,
     },
     headerStyle: {height: 75},
-    headerTintColor: 'white',
     headerBackground: (
       <Image
         style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
@@ -48,37 +48,40 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 30}}> Farmer Me </Text>        
+        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Jimothy Neal </Text>        
         </View>
         
         <View style={styles.profilePic}>
 
           <Image 
-            style={{flex:1, height: 300, width: 300}}
-            source={require('../assets/images/Farmer_Me.png')}
+            style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: 'black',}}
+            source={require('../assets/images/Jimothy.jpg')}
           />
         </View>
 
         <View style={styles.c1}>
           <View style={styles.bioContainer}>
             <Text style={styles.bioText}>
-              I started Achadinha Meat Farms in 1968, after being inspired by the book “Fast Food Nation.” 
-              I wanted others around me to experience ethically sourced meat. Fifty years later, my brother 
-              and I continue to produce meat from our ranch in California.
+              I started Wild West Farms in 1978, after learning how to farm from my dad. 
+              I wanted others around me to experience how wonderful unsulfured apricots taste.
               </Text>
           </View>
         </View>
- 
+       
+
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
-        <Category 
+        <ProfileCategory 
+        imageUri={require('../assets/images/PersonalInfoCard.png')}
         name="Burlingame Market"/>
 
-        <Category 
+        <ProfileCategory 
+        imageUri={require('../assets/images/ProductsCard.png')}
         name="Palo Alto Market"/>
 
-        <Category 
+        <ProfileCategory 
+        imageUri={require('../assets/images/CarInfoCard.png')}
         name="San Mateo Market"/>
         </ScrollView>
 
@@ -95,12 +98,11 @@ const styles = StyleSheet.create({
   profilePic: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 30,
-    paddingBottom: 30,
+    margin: 15,
   },
   c1: {
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   bioContainer: {
     backgroundColor: "#FFFFFF",
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     color: '#96594A',
     flex: 1,
     alignItems: 'center',
-    fontSize: 20,
+    fontSize: 16,
 
   },
   barterButton:{

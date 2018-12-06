@@ -33,7 +33,7 @@ export default class DiscoverScreen extends React.Component {
       textAlign: 'left',
       flex: 1,
     },
-    headerStyle: {height: 75},
+    headerStyle: {height: 75},    headerTintColor: 'white',
     headerBackground: (
       <Image
         style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}

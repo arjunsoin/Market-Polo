@@ -62,7 +62,6 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <SearchBar 
-        onPress={() => navigate('DiscoverFarmer')}
         round 
         lightTheme 
         placeholder='Search for all...' 
@@ -78,17 +77,14 @@ export default class DiscoverScreen extends React.Component {
           <View style={styles.buttonContainer}>
 
             <TouchableOpacity 
-              style={{ height: 100, margin: 10,
-              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,
+              style={{ height: 25, margin: 10,
+              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20, textAlignVertical: 'center', justifyContent: 'center',
               shadowColor: '#000',
               shadowOffset: { width: 0, height: 2 },
               shadowOpacity: 0.5,
               shadowRadius: 5,
               }} 
               title="Button 1"
-              onPress={
-                () => {Alert.alert('You tapped the button!');
-              }}
               >
               <Text style={{color: '#96594A',}}> Markets </Text>
               
@@ -99,8 +95,8 @@ export default class DiscoverScreen extends React.Component {
           <View style={styles.buttonContainer}>
 
             <TouchableOpacity 
-              style={{ height: 100, margin: 10,
-              backgroundColor: '#DDDDDD', alignItems: 'center', 
+              style={{ height: 25, margin: 10,
+              backgroundColor: '#DDDDDD', alignItems: 'center', textAlignVertical: 'center', justifyContent: 'center',
               borderRadius: 20,              
               shadowColor: '#000',
               shadowOffset: { width: 0, height: 2 },
@@ -120,28 +116,56 @@ export default class DiscoverScreen extends React.Component {
         </View>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 40, fontWeight: 'bold'}}> Today </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> What's happening around you today? </Text>
+        <Text style= {{fontSize: 40, fontWeight: 'bold', color: '#96594A'}}> Today </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15, color: '#96594A'}}> What's happening around you today? </Text>
         </View>
 
 
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
+            <View style={styles.rectangle}>
+            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Burlingame Market </Text>
+            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
+            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <TouchableOpacity
+            style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
+            borderRadius: 6, width: 120, height: 20}}
+            onPress={() => navigate('Burlingame')}
+            >
+              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+            </TouchableOpacity>
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Burlingame Market"/>
+        </View>
 
+                    <View style={styles.rectangle}>
+            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> San Mateo Market </Text>
+            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
+            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <TouchableOpacity
+            style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
+            borderRadius: 6, width: 120, height: 20}}
+            onPress={() => navigate('SanMateo')}
+            >
+              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+            </TouchableOpacity>
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Palo Alto Market"/>
+        </View>
 
+                    <View style={styles.rectangle}>
+            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Palo Alto Market </Text>
+            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
+            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <TouchableOpacity
+            style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
+            borderRadius: 6, width: 120, height: 20}}
+            onPress={() => navigate('PaloAlto')}
+            >
+              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+            </TouchableOpacity>
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="San Mateo Market"/>
+        </View>
+
         </ScrollView>
 
 
@@ -160,19 +184,21 @@ export default class DiscoverScreen extends React.Component {
         showsHorizontalScrollIndicator={false}>
 
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Burlingame Market"/>
 
+                    <View style={styles.rectangle}>
+            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Burlingame Market </Text>
+            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
+            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <TouchableOpacity
+            style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
+            borderRadius: 6, width: 120, height: 20}}
+            onPress={() => navigate('Burlingame')}
+            >
+              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+            </TouchableOpacity>
 
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="Palo Alto Market"/>
+        </View>
 
-
-        <Category 
-        imageUri={require('../assets/images/home.jpg')}
-        name="San Mateo Market"/>
         </ScrollView>
 
 
@@ -238,6 +264,15 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: 'center',
   },
+    rectangle: {
+    flex: 1,
+    alignItems: 'center',
+    width: 110 * 2,
+    height: 180,
+    backgroundColor: '#FFFFFF',
+    left: 10,
+    margin: 15,
+},
   contentContainer: {
     paddingTop: 30,
   },

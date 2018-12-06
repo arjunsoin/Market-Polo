@@ -10,14 +10,24 @@ import {
   View,
 } from 'react-native';
 
-import { SearchBar, Button} from 'react-native-elements';
+import { SearchBar, Button, CheckBox} from 'react-native-elements';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
-import Category from '../components/Category'
+import BarterCategory from '../components/BarterCategory'
 import DiscoverScreenFarmer from './DiscoverScreenFarmer'
 
+
 export default class DiscoverScreen extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      checkBoxChecked: []
+    }
+  }
+
   static navigationOptions = {
     title: 'Barter',
     headerTitleStyle: {
@@ -27,6 +37,7 @@ export default class DiscoverScreen extends React.Component {
       textAlign: 'left',
       flex: 1,
     },
+    headerTintColor: 'white',
     headerStyle: {height: 75},
     headerBackground: (
       <Image
@@ -38,6 +49,8 @@ export default class DiscoverScreen extends React.Component {
 
   render() {
     const {navigate} = this.props.navigation;
+    const farmerName = this.props.navigation.getParam('farmerName', 'Farmer X')
+    const imageName = this.props.navigation.getParam('imageName', 'Farmer X')
     return (
       <ScrollView style={styles.container}>
 
@@ -47,7 +60,7 @@ export default class DiscoverScreen extends React.Component {
           
           <View style = {styles.farmerMeProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 10, borderWidth: 2, borderColor: 'black',}}
+              style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2, borderColor: 'black',}}
               source={require('../assets/images/Farmer_Me.png')}
               >
             </Image>
@@ -55,32 +68,35 @@ export default class DiscoverScreen extends React.Component {
 
           <View style = {styles.farmerJohnProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 10, paddingLeft: 30, borderRadius: 10, borderWidth: 2,borderColor: 'black',}}
-              source={require('../assets/images/Farmer_John.png')}
+              style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2,borderColor: 'black',}}
+              source={imageName}
               >
             </Image>
           </View>
         </View>
+        
+
+
 
         <View style={{}}>
-          <Text style= {{color: '#96594A', fontSize: 30, fontWeight: 'bold'}}> I send: </Text>
+          <Text style= {{color: '#96594A', fontSize: 30, fontWeight: 'bold', margin: 15}}> I send: </Text>
         </View>
 
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
 
 
-          <Category 
-          imageUri={require('../assets/images/home.jpg')}
+          <BarterCategory 
+          imageUri={require('../assets/products/dried_fruit.png')}
           name="Burlingame Market"/>
 
 
-          <Category 
-          imageUri={require('../assets/images/home.jpg')}
+          <BarterCategory 
+          imageUri={require('../assets/products/apples.png')}
           name="Palo Alto Market"/>
 
 
-          <Category 
-          imageUri={require('../assets/images/home.jpg')}
+          <BarterCategory 
+          imageUri={require('../assets/products/apricots.png')}
           name="San Mateo Market"/>
         </ScrollView>
 
@@ -89,24 +105,24 @@ export default class DiscoverScreen extends React.Component {
         </View>
         
         <View style={{}}>
-          <Text style= {{color: '#96594A',fontSize: 30, fontWeight: 'bold'}}> I ask for: </Text>
+          <Text style= {{color: '#96594A',fontSize: 30, fontWeight: 'bold', margin: 15}}> I ask for: </Text>
         </View>
        
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
 
 
-          <Category 
-          imageUri={require('../assets/images/home.jpg')}
+          <BarterCategory 
+          imageUri={require('../assets/products/kabob.png')}
           name="Burlingame Market"/>
 
 
-          <Category 
-          imageUri={require('../assets/images/home.jpg')}
+          <BarterCategory 
+          imageUri={require('../assets/products/ribs.png')}
           name="Palo Alto Market"/>
 
 
-          <Category 
-          imageUri={require('../assets/images/home.jpg')}
+          <BarterCategory 
+          imageUri={require('../assets/products/chicken.png')}
           name="San Mateo Market"/>
         </ScrollView>
 
@@ -145,6 +161,7 @@ const styles = StyleSheet.create({
   barterButton:{
     paddingTop: 15,
     paddingLeft: 20,
+    alignItems: 'center'
   },
   barterText:{
     alignItems: 'center',
@@ -154,10 +171,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   farmerMeProfile: {
-    paddingRight: 30,
+    paddingRight: 5,
   },
   farmerJohnProfile: {
-    paddingLeft: 30,
+    paddingLeft: 5,
   },
   containerOne: {
     flex: 1,

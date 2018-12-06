@@ -48,14 +48,14 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Terry McGuire </Text>        
+        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Evan Stokes </Text>        
         </View>
         
         <View style={styles.profilePic}>
 
           <Image 
             style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: 'black',}}
-            source={require('../assets/images/Terry.jpg')}
+            source={require('../assets/images/Evan.jpg')}
           />
         </View>
 
