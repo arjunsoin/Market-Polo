@@ -31,14 +31,8 @@ import DiscoverScreenFarmer from './DiscoverScreenFarmer'
 // const AppContainer = createAppContainer(RootStack);
 
 import HomeScreen from '../screens/HomeScreen';
-
-import { MonoText } from '../components/StyledText';
-
-import Category from '../components/Category';
-
 import searchScreen from '../screens/searchScreen';
 import FarmerJohnProfile from '../screens/FarmerJohnProfile';
-
 
 
 export default class DiscoverScreen extends React.Component {

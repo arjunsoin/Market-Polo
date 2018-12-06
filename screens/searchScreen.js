@@ -54,7 +54,7 @@ export default class App extends Component {
                     />
                   </View>
                   <View style = {{left: 20}}>
-                    <Text style = {{fontSize: 25}}>{email.user.name}</Text>
+                    <Text style = {{fontSize: 15}}>{email.user.name}</Text>
                     <Text style={styles.emailSubject}>{email.subject}</Text>
                   </View>
                   <View style = {{left: 20}}>

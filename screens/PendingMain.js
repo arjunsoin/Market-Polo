@@ -1,45 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { Button } from 'react-native-elements';
-import { StackNavigator } from 'react-navigation';
+import * as React from 'react';
+import { View, Animated, TouchableOpacity, StyleSheet, Text, ScrollView, Image } from 'react-native';
+import { TabView, SceneMap } from 'react-native-tab-view';
+import { Constants } from 'expo';
+import emails from '../data/farmerData';
 
-export default class PendingMain extends React.Component {
-  static navigationOptions = {
-    title: 'Pending',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontSize: 40,
-      color: '#FFFFFF',
-      textAlign: 'left',
-      flex: 1,
-    },
-    headerStyle: {height: 75},
-    headerBackground: (
-      <Image
-        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
-        source={require('../assets/images/header.jpg')}
-      />
-    ),
-  };
-
-  render() {
-    return (
-
-    <ScrollView style = {styles.container}>
-
-      <View style = {styles.containerOne}>
-
-        <View style={styles.textContainer}>
-          <Text style= {{fontSize: 50, fontWeight: 'bold'}}> Barters </Text>
-        </View>
-
+const FirstRoute = () => (
+  <View style={[styles.container, { backgroundColor: '#F7EFEC' }]}>
+          <View style = {styles.containerOne}>
 
         <ScrollView showsVerticalScrollIndicator={true} style = {{height: 200, 
           marginBottom: 50}}>
           <View style = {styles.farmerSnippet1}>
 
             <View> 
-              <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
               source={require('../assets/images/header.jpg')}/>
             </View>
@@ -56,10 +30,60 @@ export default class PendingMain extends React.Component {
             </View>
           </View>
 
+          <View style = {styles.farmerSnippet2}>
+
+            <View> 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
+                borderColor: '#000', borderWidth: 5}}
+              source={require('../assets/images/header.jpg')}/>
+            </View>
+
+             <View> 
+
+              <Text h1 style= {{fontSize: 30, color: '#96594A', 
+              left: 45}}> Farmer Tina </Text>
+              <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
+              margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
+              <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+              left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
+
+            </View>
+          </View>
+        </ScrollView>
+        </View>
+  </View>
+);
+const SecondRoute = () => (
+  <View style={[styles.container, { backgroundColor: '#F7EFEC' }]}>
+
+            <View style = {styles.containerOne}>
+
+        <ScrollView showsVerticalScrollIndicator={true} style = {{height: 200, 
+          marginBottom: 50}}>
           <View style = {styles.farmerSnippet1}>
 
             <View> 
-              <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
+                borderColor: '#000', borderWidth: 5}}
+              source={require('../assets/images/header.jpg')}/>
+            </View>
+
+             <View> 
+
+              <Text h1 style= {{fontSize: 30, color: '#96594A', 
+              left: 45}}> Farmer John </Text>
+              <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
+              margin: 10, left: 40, flexWrap: "wrap"}}> You Receive: Apples   |   You Send: Pears </Text>
+              <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
+              left: 50, flexWrap: "wrap"}}> Note: Hi John! I’m trying to get my hands on... </Text>
+
+            </View>
+          </View>
+
+          <View style = {styles.farmerSnippet2}>
+
+            <View> 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
               source={require('../assets/images/header.jpg')}/>
             </View>
@@ -78,103 +102,107 @@ export default class PendingMain extends React.Component {
         </ScrollView>
         </View>
 
-      <View style = {styles.containerTwo}>
 
-        <View style={styles.textContainer}>
-        <Text style= {{fontSize: 50, fontWeight: 'bold'}}> Carpools </Text>
-          <View style= {{flex: 1,}}>
-          </View>
-        </View> 
 
-        <ScrollView showsVerticalScrollIndicator={true} style = {{height: 200, 
-          marginBottom: 60}}>
+  </View>
 
-        <View style = {styles.farmerSnippet1}>
+);
 
-          <View> 
-            <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
-              borderColor: '#000', borderWidth: 5}}
-            source={require('../assets/images/header.jpg')}/>
-          </View>
+export default class PendingMain extends React.Component {
+    static navigationOptions = {
+    title: 'Pending',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 40,
+      color: '#FFFFFF',
+      textAlign: 'center',
+      flex: 1,
+    },
+    headerStyle: {height: 75},
+    headerBackground: (
+      <Image
+        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
+        source={require('../assets/images/header.jpg')}
+      />
+    ),
+  };
+  state = {
+    index: 0,
+    routes: [
+      { key: 'first', title: 'Barters' },
+      { key: 'second', title: 'Carpools' },
+    ],
+  };
 
-           <View> 
+  _handleIndexChange = index => this.setState({ index });
 
-            <Text h1 style= {{fontSize: 30, color: '#96594A', 
-            left: 45}}> Farmer John </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Apples  |  You Send: Pears </Text>
-            <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-            left: 50,}}> Note: Hi John! I’m trying to get my hands on... </Text>
+  _renderTabBar = props => {
+    const inputRange = props.navigationState.routes.map((x, i) => i);
 
-          </View>
-
-        </View>
-
-        <View style = {styles.farmerSnippet1}>
-
-          <View> 
-            <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
-              borderColor: '#000', borderWidth: 5}}
-            source={require('../assets/images/header.jpg')}/>
-          </View>
-
-           <View> 
-
-            <Text h1 style= {{fontSize: 30, color: '#96594A', 
-            left: 45}}> Farmer Tina </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
-            <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-            left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
-
-          </View>
-
-        </View>
-
-        <View style = {styles.farmerSnippet1}>
-
-          <View> 
-            <Image style = {{height: 100, width: 100, borderRadius: 10, left: 40, 
-              borderColor: '#000', borderWidth: 5}}
-            source={require('../assets/images/header.jpg')}/>
-          </View>
-
-           <View> 
-
-            <Text h1 style= {{fontSize: 30, color: '#96594A', 
-            left: 45}}> Farmer Tina </Text>
-            <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-            margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
-            <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-            left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
-
-          </View>
-
-        </View>
-
-        </ScrollView>
-
+    return (
+      <View style={styles.tabBar}>
+        {props.navigationState.routes.map((route, i) => {
+          const color = props.position.interpolate({
+            inputRange,
+            outputRange: inputRange.map(
+              inputIndex => (inputIndex === i ? '#96594A' : '#222')
+            ),
+          });
+          return (
+            <TouchableOpacity
+              style={styles.tabItem}
+              onPress={() => this.setState({ index: i })}>
+              <Animated.Text style={{ color, 
+              fontSize: 30 }}>{route.title}</Animated.Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
-      
-    </ScrollView>
+    );
+  };
+
+  _renderScene = SceneMap({
+    first: FirstRoute,
+    second: SecondRoute,
+  });
+
+  render() {
+    return (
+      <TabView
+        navigationState={this.state}
+        renderScene={this._renderScene}
+        renderTabBar={this._renderTabBar}
+        onIndexChange={this._handleIndexChange}
+      />
     );
   }
 }
 
-
 const styles = StyleSheet.create({
-  textContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
   container: {
     flex: 1,
     backgroundColor: '#F7EFEC',
   },
+  tabBar: {
+    flexDirection: 'row',
+    paddingTop: 10, 
+    borderWidth: 2.5,
+    borderColor: '#000',
+    backgroundColor: 'rgba(0,0,0,.25)'
+  },
+  tabItem: {
+    flex: 1,
+    alignItems: 'center',
+    padding: 16,
+  },
+    textContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
   containerOne: {
     flex: 1,
     backgroundColor: '#F7EFEC',
-
+    padding: 20
   },
     barterContainer: {
     flex: 1,
@@ -195,7 +223,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#F7EFEC',
-
     right: 20
+  },
+    farmerSnippet2: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#F7EFEC',
+    right: 50,
+    margin: 30
   },
 });
