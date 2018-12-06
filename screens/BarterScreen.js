@@ -37,6 +37,7 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
@@ -46,7 +47,7 @@ export default class DiscoverScreen extends React.Component {
           
           <View style = {styles.farmerMeProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 10, borderWidth: 2,borderColor: 'black',}}
+              style={{height: 75, width: 75, borderRadius: 10, borderWidth: 2, borderColor: 'black',}}
               source={require('../assets/images/Farmer_Me.png')}
               >
             </Image>

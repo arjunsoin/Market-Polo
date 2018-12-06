@@ -22,7 +22,8 @@ const SplashStack = createStackNavigator({
   Discover: DiscoverScreen,
   Pending: PendingMain,
   FarmerJohn: FarmerJohnProfile,
-  DiscoverFarmer: DiscoverScreenFarmer
+  DiscoverFarmer: DiscoverScreenFarmer,
+  Search: searchScreen,
 });
 
 SplashStack.navigationOptions = {

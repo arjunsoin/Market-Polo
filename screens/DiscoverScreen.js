@@ -61,16 +61,15 @@ export default class DiscoverScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
 
-
         <SearchBar 
-        onPress={() => navigate('Farmer')}
+        onPress={() => navigate('DiscoverFarmer')}
         round 
         lightTheme 
         placeholder='Search for all...' 
         containerStyle={{backgroundColor: '#F7EFEC',}}
         onChangeText={
-          () => {Alert.alert('You tapped the button!');
-        }}
+          () => navigate('Search')
+        }
         />
 
 
@@ -80,13 +79,18 @@ export default class DiscoverScreen extends React.Component {
 
             <TouchableOpacity 
               style={{ height: 100, margin: 10,
-              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,}} 
+              backgroundColor: '#FFFFFF', alignItems: 'center', borderRadius: 20,
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.5,
+              shadowRadius: 5,
+              }} 
               title="Button 1"
               onPress={
                 () => {Alert.alert('You tapped the button!');
               }}
               >
-              <Text style={{color: '#b5aaa5',}}> Markets </Text>
+              <Text style={{color: '#96594A',}}> Markets </Text>
               
             </TouchableOpacity>
 
@@ -97,13 +101,17 @@ export default class DiscoverScreen extends React.Component {
             <TouchableOpacity 
               style={{ height: 100, margin: 10,
               backgroundColor: '#DDDDDD', alignItems: 'center', 
-              borderRadius: 20}}
+              borderRadius: 20,              
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.5,
+              shadowRadius: 5,}}
               title="Button 2"
               onPress={() => navigate('DiscoverFarmer')}
               >
 
 
-            <Text style={{color: '#FFFFFF',}}> Farmers </Text>
+            <Text style={{color: '#96594A',}}> Farmers </Text>
             
             </TouchableOpacity>
 
@@ -185,6 +193,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F7EFEC',
+  },
+  barterButton:{
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+  barterText:{
+    textAlignVertical: 'center',
+    margin: 10,
+    flex: 1,
   },
   containerOne: {
     flex: 1,

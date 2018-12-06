@@ -62,8 +62,9 @@ export default class DiscoverScreen extends React.Component {
         <View style={styles.c1}>
           <View style={styles.bioContainer}>
             <Text style={styles.bioText}>
-              I started Wild West Farms in 1978, after learning how to farm from my dad. 
-              I wanted others around me to experience how wonderful unsulfured apricots taste.
+              I started Achadinha Meat Farms in 1968, after being inspired by the book “Fast Food Nation.” 
+              I wanted others around me to experience ethically sourced meat. Fifty years later, my brother 
+              and I continue to produce meat from our ranch in California.
               </Text>
           </View>
         </View>

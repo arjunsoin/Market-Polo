@@ -16,6 +16,7 @@ export default class App extends Component {
       textAlign: 'left',
       flex: 1,
     },
+    headerTintColor: 'white',
     headerStyle: {height: 75},
     headerBackground: (
       <Image

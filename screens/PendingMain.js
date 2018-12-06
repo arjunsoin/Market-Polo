@@ -117,7 +117,9 @@ export default class PendingMain extends React.Component {
       color: '#FFFFFF',
       textAlign: 'center',
       flex: 1,
-    },
+    },  
+    headerTintColor: 'white',
+    headerLeft: null,
     headerStyle: {height: 75},
     headerBackground: (
       <Image

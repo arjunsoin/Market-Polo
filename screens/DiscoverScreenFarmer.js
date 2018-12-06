@@ -56,17 +56,18 @@ export default class DiscoverScreen extends React.Component {
         placeholder='Search for all...' 
         containerStyle={{backgroundColor: '#F7EFEC',}}/>
 
+        
 
         <View style={{flexDirection: 'row', marginBottom: 10}}>
         
         <View style={styles.buttonContainer}>
 
         <TouchableOpacity style={{ height: 100, margin: 10,
-          backgroundColor: '#b5aaa5', alignItems: 'center', borderRadius: 20,}} 
+          backgroundColor: '#DDDDDD', alignItems: 'center', borderRadius: 20,}} 
           title="Button 1"
           onPress={() => navigate('Discover')}
           >
-        <Text style={{color: '#FFFFFF',}}> Markets </Text>
+        <Text style={{color: '#96594A',}}> Markets </Text>
         </TouchableOpacity>
 
         </View>
@@ -74,12 +75,12 @@ export default class DiscoverScreen extends React.Component {
 
         <TouchableOpacity 
           style={{ height: 100, margin: 10,
-          backgroundColor: '#DDDDDD', alignItems: 'center', 
+          backgroundColor: '#FFFFFF', alignItems: 'center', 
           borderRadius: 20}} 
 
           title="Button 2">
 
-        <Text style={{color: '#FFFFFF',}}> Farmers </Text>
+        <Text style={{color: '#96594A',}}> Farmers </Text>
         
         </TouchableOpacity>
 
