@@ -18,6 +18,7 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+
 import Category from '../components/Category';
 import ProfileCategory from '../components/ProfileCategory'
 
@@ -74,8 +75,13 @@ export default class DiscoverScreen extends React.Component {
           
           <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => navigate('Pending')}
-              style={{
+              onPress={
+                () => navigate('Barter',{
+                  farmerName: 'Farmer Arjun',
+                  imageName: farmerData[4].image,
+                  otherParam: 'Ben is the best',
+                })
+            }              style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",
                 width: 125,
@@ -96,9 +102,13 @@ export default class DiscoverScreen extends React.Component {
 
           <View style={styles.carpoolButton}>    
             <TouchableOpacity
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
+              onPress={
+                () => navigate('Carpool',{
+                  farmerName: 'Farmer Arjun',
+                  imageName: farmerData[4].image,
+                  otherParam: 'Ben is the best',
+                })
+              }
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

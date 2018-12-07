@@ -72,7 +72,7 @@ export default class DiscoverScreen extends React.Component {
           
           <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => navigate('Pending')}
+              onPress={() => navigate('Barter')}
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

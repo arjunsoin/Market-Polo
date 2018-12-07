@@ -20,14 +20,6 @@ import DiscoverScreenFarmer from './DiscoverScreenFarmer'
 
 export default class DiscoverScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checkBoxChecked: []
-    }
-  }
-
   static navigationOptions = {
     title: 'Barter',
     headerTitleStyle: {
@@ -51,6 +43,7 @@ export default class DiscoverScreen extends React.Component {
     const {navigate} = this.props.navigation;
     const farmerName = this.props.navigation.getParam('farmerName', 'Farmer X')
     const imageName = this.props.navigation.getParam('imageName', 'Farmer X')
+
     return (
       <ScrollView style={styles.container}>
 
@@ -61,7 +54,7 @@ export default class DiscoverScreen extends React.Component {
           <View style = {styles.farmerMeProfile}>
             <Image
               style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2, borderColor: 'black',}}
-              source={require('../assets/images/Farmer_Me.png')}
+              source={require('../assets/images/Terry.jpg')}
               >
             </Image>
           </View>
@@ -128,7 +121,13 @@ export default class DiscoverScreen extends React.Component {
 
         <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => navigate('Pending')}
+              onPress={
+                () => navigate('Pending',{
+                  farmerName: farmerName,
+                  imageName: imageName,
+                  otherParam: 'Ben is the best',
+                })
+              }
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

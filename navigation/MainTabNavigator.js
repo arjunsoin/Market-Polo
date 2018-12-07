@@ -71,6 +71,7 @@ SplashStack.navigationOptions = {
 const PendingStack = createStackNavigator({
   Pending: PendingMain,
   Barter: BarterScreen,
+  Carpool: CarpoolScreen,
 })
 
 PendingStack.navigationOptions = {

@@ -9,7 +9,8 @@ import Evan_Stokes from '../assets/images/Evan.jpg'
 import Clarissa_Woods from '../assets/images/Clarissa_Woods.jpg'
 import Ben_Harmon from '../assets/images/Ben.jpg'
 
-export default [{
+export default [
+{
   id: 1,
   user: {
     name: 'Terry McGuire',

@@ -272,6 +272,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     left: 10,
     margin: 15,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
 },
   contentContainer: {
     paddingTop: 30,

@@ -3,8 +3,75 @@ import { View, Animated, TouchableOpacity, StyleSheet, Text, ScrollView, Image }
 import { TabView, SceneMap } from 'react-native-tab-view';
 import { Constants } from 'expo';
 import emails from '../data/farmerData';
+import SanthuVistaProfile from '../screens/SanthuVistaProfile';
+import FarmerSanthuPic from '../assets/images/Santhu.jpg'
+import { withNavigation } from 'react-navigation';
+import Cheyenne from '../assets/images/CheyenneCarter.jpg'
 
-const FirstRoute = () => (
+
+
+
+
+export default class PendingMain extends React.Component {
+    static navigationOptions = {
+    title: 'Pending',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 40,
+      color: '#FFFFFF',
+      textAlign: 'center',
+      flex: 1,
+    },  
+    headerTintColor: 'white',
+    headerLeft: null,
+    headerStyle: {height: 75},
+    headerBackground: (
+      <Image
+        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
+        source={require('../assets/images/header.jpg')}
+      />
+    ),
+  };
+  state = {
+    index: 0,
+    routes: [
+      { key: 'first', title: 'Barters' },
+      { key: 'second', title: 'Carpools' },
+    ],
+  };
+
+  _handleIndexChange = index => this.setState({ index });
+
+  _renderTabBar = props => {
+    const inputRange = props.navigationState.routes.map((x, i) => i);
+
+    return (
+      <View style={styles.tabBar}>
+        {props.navigationState.routes.map((route, i) => {
+          const color = props.position.interpolate({
+            inputRange,
+            outputRange: inputRange.map(
+              inputIndex => (inputIndex === i ? '#96594A' : '#222')
+            ),
+          });
+          return (
+            <TouchableOpacity
+              style={styles.tabItem}
+              onPress={() => this.setState({ index: i })}>
+              <Animated.Text style={{ color, 
+              fontSize: 30 }}>{route.title}</Animated.Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    );
+  };
+
+  render() {
+    const {navigate} = this.props.navigation;
+    const farmerName = this.props.navigation.getParam('farmerName', 'Farmer Tina')
+    const imageName = this.props.navigation.getParam('imageName', Cheyenne)
+    const FirstRoute = () => (
   <View style={[styles.container, { backgroundColor: '#F7EFEC' }]}>
           <View style = {styles.containerOne}>
 
@@ -15,13 +82,13 @@ const FirstRoute = () => (
             <View> 
               <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
-              source={require('../assets/images/header.jpg')}/>
+              source={imageName}/>
             </View>
 
              <View> 
 
               <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 45}}> Farmer John </Text>
+              left: 45}}> {farmerName} </Text>
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
               margin: 10, left: 40, flexWrap: "wrap"}}> You Receive: Apples   |   You Send: Pears </Text>
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
@@ -107,72 +174,13 @@ const SecondRoute = () => (
   </View>
 
 );
-
-export default class PendingMain extends React.Component {
-    static navigationOptions = {
-    title: 'Pending',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontSize: 40,
-      color: '#FFFFFF',
-      textAlign: 'center',
-      flex: 1,
-    },  
-    headerTintColor: 'white',
-    headerLeft: null,
-    headerStyle: {height: 75},
-    headerBackground: (
-      <Image
-        style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
-        source={require('../assets/images/header.jpg')}
-      />
-    ),
-  };
-  state = {
-    index: 0,
-    routes: [
-      { key: 'first', title: 'Barters' },
-      { key: 'second', title: 'Carpools' },
-    ],
-  };
-
-  _handleIndexChange = index => this.setState({ index });
-
-  _renderTabBar = props => {
-    const inputRange = props.navigationState.routes.map((x, i) => i);
-
-    return (
-      <View style={styles.tabBar}>
-        {props.navigationState.routes.map((route, i) => {
-          const color = props.position.interpolate({
-            inputRange,
-            outputRange: inputRange.map(
-              inputIndex => (inputIndex === i ? '#96594A' : '#222')
-            ),
-          });
-          return (
-            <TouchableOpacity
-              style={styles.tabItem}
-              onPress={() => this.setState({ index: i })}>
-              <Animated.Text style={{ color, 
-              fontSize: 30 }}>{route.title}</Animated.Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-    );
-  };
-
-  _renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute,
-  });
-
-  render() {
     return (
       <TabView
         navigationState={this.state}
-        renderScene={this._renderScene}
+        renderScene={SceneMap({
+          first: FirstRoute,
+          second: SecondRoute
+        })}
         renderTabBar={this._renderTabBar}
         onIndexChange={this._handleIndexChange}
       />

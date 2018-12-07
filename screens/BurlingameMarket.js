@@ -43,6 +43,7 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
@@ -91,21 +92,35 @@ export default class DiscoverScreen extends React.Component {
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
-
-        <Category 
-        imageUri={require('../assets/images/Arjun_Shelton_Card.png')}
-        name="Arjun Shelton"/>
-
-
-        <Category 
-        imageUri={require('../assets/images/Ben_Harmon_Card.png')}
-        name="Ben Harmon"/>
+        <TouchableOpacity
+          onPress={() => navigate('ArjunShelton')}
+        >
+          <Category 
+          imageUri={require('../assets/images/Arjun_Shelton_Card.png')}
+          name="Arjun Shelton"/>
+        </TouchableOpacity>
 
 
-        <Category 
-        imageUri={require('../assets/images/Charlene_Carter_Card.png')}
-        name="Charlene Carter"/>
-        </ScrollView>
+
+        <TouchableOpacity
+          onPress={() => navigate('BenHarmon')}
+        >
+          <Category 
+          imageUri={require('../assets/images/Ben_Harmon_Card.png')}
+          name="Ben Harmon"/>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+          onPress={() => navigate('CheyenneCarter')}
+        >
+          <Category 
+          imageUri={require('../assets/images/Charlene_Carter_Card.png')}
+          name="Charlene Carter"/>
+        </TouchableOpacity>
+
+
+          </ScrollView>
 
 
         <View style={styles.containerThree}>
@@ -122,14 +137,24 @@ export default class DiscoverScreen extends React.Component {
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
+        <TouchableOpacity
+          onPress={() => navigate('SanthuVista')}
+        >
+          <Category 
+          imageUri={require('../assets/images/Santhu_Vista_Card.png')}
+          name="Santhu Vista"/>
+        </TouchableOpacity>
 
-        <Category 
-        imageUri={require('../assets/images/Santhu_Vista_Card.png')}
-        name="Santhu Vista"/>
 
-        <Category 
-        imageUri={require('../assets/images/Jimothy_Neal_Card.png')}
-        name="Jimothy Neal"/>
+        <TouchableOpacity
+          onPress={() => navigate('JimothyNeal')}
+        >
+          <Category 
+          imageUri={require('../assets/images/Jimothy_Neal_Card.png')}
+          name="Jimothy Neal"/>
+        </TouchableOpacity>
+
+
 
         </ScrollView>
 

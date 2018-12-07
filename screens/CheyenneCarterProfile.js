@@ -20,7 +20,7 @@ import { MonoText } from '../components/StyledText';
 
 import Category from '../components/Category';
 import ProfileCategory from '../components/ProfileCategory'
-
+import farmerData from '../data/farmerData'
 import { StackNavigator } from 'react-navigation';
 
 export default class DiscoverScreen extends React.Component {
@@ -72,7 +72,12 @@ export default class DiscoverScreen extends React.Component {
           
           <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => navigate('Pending')}
+              onPress={
+                () => navigate('Barter',{
+                  farmerName: 'Farmer Cheyenne',
+                  imageName: farmerData[1].image,
+                  otherParam: 'Ben is the best',
+                })}
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",
@@ -94,9 +99,12 @@ export default class DiscoverScreen extends React.Component {
 
           <View style={styles.carpoolButton}>    
             <TouchableOpacity
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
+              onPress={
+                () => navigate('Carpool',{
+                  farmerName: 'Farmer Cheyenne',
+                  imageName: farmerData[1].image,
+                  otherParam: 'Ben is the best',
+                })}
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

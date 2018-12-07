@@ -101,9 +101,13 @@ export default class DiscoverScreen extends React.Component {
 
           <View style={styles.carpoolButton}>    
             <TouchableOpacity
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
+              onPress={
+                () => navigate('Carpool',{
+                  farmerName: 'Farmer Santhu',
+                  imageName: FarmerSanthuPic,
+                  otherParam: 'Ben is the best',
+                })
+            }
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

@@ -22,6 +22,7 @@ import Category from '../components/Category';
 import ProfileCategory from '../components/ProfileCategory'
 
 import { StackNavigator } from 'react-navigation';
+import farmerData from '../data/farmerData';
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -72,7 +73,12 @@ export default class DiscoverScreen extends React.Component {
           
           <View style={styles.barterButton}>    
             <TouchableOpacity
-              onPress={() => navigate('Pending')}
+              onPress={
+                () => navigate('Barter',{
+                  farmerName: 'Farmer Ben',
+                  imageName: farmerData[9].image,
+                  otherParam: 'Ben is the best',
+                })}
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",
@@ -94,9 +100,13 @@ export default class DiscoverScreen extends React.Component {
 
           <View style={styles.carpoolButton}>    
             <TouchableOpacity
-              onPress={() => {
-                Alert.alert('You tapped the button!');
-              }}
+              onPress={
+                () => navigate('Carpool',{
+                  farmerName: 'Farmer Ben',
+                  imageName: farmerData[9].image,
+                  otherParam: 'Ben is the best',
+                })
+              }
               style={{
                 backgroundColor: "#96594A",
                 borderColor: "transparent",

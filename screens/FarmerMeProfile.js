@@ -33,7 +33,7 @@ export default class DiscoverScreen extends React.Component {
       textAlign: 'left',
       flex: 1,
     },
-    headerStyle: {height: 75},
+    headerStyle: {height: 75},    headerTintColor: 'white',
     headerBackground: (
       <Image
         style={{ backgroundColor: 'transparent' , flex: 1, height: 70 }} blurRadius={5}
@@ -48,14 +48,14 @@ export default class DiscoverScreen extends React.Component {
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Jimothy Neal </Text>        
+        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Terry McGuire </Text>        
         </View>
         
         <View style={styles.profilePic}>
 
           <Image 
             style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: 'black',}}
-            source={require('../assets/images/Jimothy.jpg')}
+            source={require('../assets/images/Terry.jpg')}
           />
         </View>
 
@@ -67,8 +67,7 @@ export default class DiscoverScreen extends React.Component {
               </Text>
           </View>
         </View>
-       
-
+        
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
