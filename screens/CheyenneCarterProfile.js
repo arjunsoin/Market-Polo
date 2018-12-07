@@ -28,9 +28,9 @@ export default class DiscoverScreen extends React.Component {
     title: 'Community',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 40,
+      fontSize: 30,
       color: '#FFFFFF',
-      textAlign: 'left',
+      textAlign: 'center',
       flex: 1,
     },
     headerStyle: {height: 75},    headerTintColor: 'white',
@@ -130,17 +130,27 @@ export default class DiscoverScreen extends React.Component {
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/PersonalInfoCard.png')}
-        name="Burlingame Market"/>
+        <View style={styles.rectangle}>
+            <Text style = {{color: '#96594A', fontWeight: 'bold', textDecorationLine: 'underline', textAlign: 'center', paddingTop: 10, }}> Personal Info </Text>
+            <View style={{height:40, width:200, textAlign: 'center', flexDirection: 'row'}}>
+              <Text style = {{color: '#96594A', right: 46, textAlign: 'center', paddingTop: 8, paddingLeft: 115}}> Age: </Text>
+              <Text style = {{paddingLeft: 4, color: '#96594A', top: 8.5, right: 48, width:40}}>62</Text>
+            </View>
+        </View>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/ProductsCard.png')}
-        name="Palo Alto Market"/>
-
-        <ProfileCategory 
-        imageUri={require('../assets/images/CarInfoCard.png')}
-        name="San Mateo Market"/>
+         <View style={styles.rectangle}>
+            <Text style = {{textAlign: 'center', color: '#96594A', fontWeight: 'bold',textDecorationLine: 'underline', right: 30, paddingTop: 10, paddingLeft:30 }}>      Car Info </Text>
+            <View style={{height:40, width:200,}}>
+              <Text style = {{paddingLeft: 20, color: '#96594A', alignContent: 'center', top: 3, left: 15, width:200}}>Make: Toyota Camry </Text>
+              <Text style = {{paddingLeft: 0, color: '#96594A', alignContent: 'center', top: 3, left: 15, width:200}}>Space: 400 Liters Available </Text>
+            </View>
+        </View>
+        <View style={styles.rectangle}>
+            <Text style = {{textAlign: 'center', color: '#96594A', fontWeight: 'bold',textDecorationLine: 'underline', right: 30, paddingTop: 10, paddingLeft:30 }}>         Product Genre </Text>
+            <View style={{height:40, width:200,}}>
+              <Text style = {{paddingLeft: 20, color: '#96594A', alignContent: 'center', top: 3, left: 40, width:150}}>Mixed Fruits </Text>
+            </View>
+        </View>
         </ScrollView>
 
       </ScrollView>
@@ -196,6 +206,20 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     justifyContent: 'center',
     flex: 1,
+  },
+  rectangle: {
+    flex: 1,
+    alignItems: 'center',
+    width: 110 * 2,
+    height: 90,
+    backgroundColor: '#FFFFFF',
+    left: 10,
+    margin: 15,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
   },
 
   containerOne: {

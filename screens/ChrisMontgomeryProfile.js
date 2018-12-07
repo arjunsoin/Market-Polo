@@ -28,9 +28,9 @@ export default class DiscoverScreen extends React.Component {
     title: 'Community',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 40,
+      fontSize: 30,
       color: '#FFFFFF',
-      textAlign: 'left',
+      textAlign: 'center',
       flex: 1,
     },
     headerStyle: {height: 75},    headerTintColor: 'white',
@@ -70,31 +70,38 @@ export default class DiscoverScreen extends React.Component {
        
         <View style={{flexDirection: 'row', marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between'}}>
           
-          <View style={styles.barterButton}>    
-            <TouchableOpacity
-              onPress={
-                () => navigate('Barter',{
-                  farmerName: 'Farmer Chris',
-                  imageName: farmerData[5].image,
-                  otherParam: 'Ben is the best',
-                })}
-              style={{
-                backgroundColor: "#96594A",
-                borderColor: "transparent",
-                width: 125,
-                height: 50,
-                borderWidth: 0,
-                borderRadius: 20,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.5,
-                shadowRadius: 5,
-              }}
-            >
+          <View style={styles.barterButton}>   
+      <TouchableOpacity onPress={() => Alert.alert(
+              'Y\'all interact a lot!',
+              'Next time, try carpooling together!',
+              [
+                {text: 'Not Now', onPress: () => console.log('Cancel Pressed!')},
+                {text: 'Cool!', onPress: () => navigate('Barter',{
+                      farmerName: 'Farmer Chris',
+                      imageName: farmerData[5].image,
+                      otherParam: 'Ben is the best',
+                    })},
+              ],
+          { cancelable: false }
+        )}
+
+              style={{
+                backgroundColor: "#96594A",
+                borderColor: "transparent",
+                width: 125,
+                height: 50,
+                borderWidth: 0,
+                borderRadius: 20,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.5,
+                shadowRadius: 5,
+              }}
+            >
               <View style={styles.barterText}>    
                 <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Barter! </Text>
-              </View>  
-            </TouchableOpacity>
+              </View> 
+</TouchableOpacity>
           </View>  
 
           <View style={styles.carpoolButton}>    
@@ -130,17 +137,27 @@ export default class DiscoverScreen extends React.Component {
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/PersonalInfoCard.png')}
-        name="Burlingame Market"/>
+        <View style={styles.rectangle}>
+            <Text style = {{color: '#96594A', fontWeight: 'bold', textDecorationLine: 'underline', textAlign: 'center', paddingTop: 10, }}> Personal Info </Text>
+            <View style={{height:40, width:200, textAlign: 'center', flexDirection: 'row'}}>
+              <Text style = {{color: '#96594A', right: 46, textAlign: 'center', paddingTop: 8, paddingLeft: 115}}> Age: </Text>
+              <Text style = {{paddingLeft: 4, color: '#96594A', top: 8.5, right: 48, width:40}}>62</Text>
+            </View>
+        </View>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/ProductsCard.png')}
-        name="Palo Alto Market"/>
-
-        <ProfileCategory 
-        imageUri={require('../assets/images/CarInfoCard.png')}
-        name="San Mateo Market"/>
+         <View style={styles.rectangle}>
+            <Text style = {{textAlign: 'center', color: '#96594A', fontWeight: 'bold',textDecorationLine: 'underline', right: 30, paddingTop: 10, paddingLeft:30 }}>      Car Info </Text>
+            <View style={{height:40, width:200,}}>
+              <Text style = {{paddingLeft: 20, color: '#96594A', alignContent: 'center', top: 3, left: 15, width:200}}>Make: Toyota Camry </Text>
+              <Text style = {{paddingLeft: 0, color: '#96594A', alignContent: 'center', top: 3, left: 15, width:200}}>Space: 400 Liters Available </Text>
+            </View>
+        </View>
+        <View style={styles.rectangle}>
+            <Text style = {{textAlign: 'center', color: '#96594A', fontWeight: 'bold',textDecorationLine: 'underline', right: 30, paddingTop: 10, paddingLeft:30 }}>         Product Genre </Text>
+            <View style={{height:40, width:200,}}>
+              <Text style = {{paddingLeft: 20, color: '#96594A', alignContent: 'center', top: 3, left: 40, width:150}}>Mixed Fruits </Text>
+            </View>
+        </View>
         </ScrollView>
 
       </ScrollView>
@@ -175,6 +192,20 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     elevation: 1,
   },
+  rectangle: {
+    flex: 1,
+    alignItems: 'center',
+    width: 110 * 2,
+    height: 90,
+    backgroundColor: '#FFFFFF',
+    left: 10,
+    margin: 15,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+  }, 
   bioText:{
     color: '#96594A',
     flex: 1,

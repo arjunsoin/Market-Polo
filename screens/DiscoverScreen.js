@@ -40,9 +40,9 @@ export default class DiscoverScreen extends React.Component {
     title: 'Discover',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 40,
+      fontSize: 30,
       color: '#FFFFFF',
-      textAlign: 'left',
+      textAlign: 'center',
       flex: 1,
     },
     headerTintColor: 'white',
@@ -140,7 +140,7 @@ export default class DiscoverScreen extends React.Component {
 
                     <View style={styles.rectangle}>
             <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> San Mateo Market </Text>
-            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
+            <Text style = {{color: '#000', right: 46}}> San Mateo, CA </Text>
             <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
             <TouchableOpacity
             style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
@@ -154,7 +154,7 @@ export default class DiscoverScreen extends React.Component {
 
                     <View style={styles.rectangle}>
             <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Palo Alto Market </Text>
-            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
+            <Text style = {{color: '#000', right: 46}}> Palo Alto, CA </Text>
             <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
             <TouchableOpacity
             style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,

@@ -1,9 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Alert } from 'react-native';
 import { Button } from 'react-native-elements'
 
 export default class SplashScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+    tabBarVisible: false
+  };
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ImageBackground style={styles.container} source={require('../assets/images/home.jpg')}>
         <Image source={require('../assets/images/logo.jpg')} 
@@ -11,10 +16,11 @@ export default class SplashScreen extends React.Component {
 
         <Button
         large
-        title='LET US START!' 
+        title='GET STARTED!' 
         borderRadius = '30'
         backgroundColor = '#F7EFEC'
         color = '#96594A'
+        onPress={() => navigate('Discover')}
         />
 
       </ImageBackground>

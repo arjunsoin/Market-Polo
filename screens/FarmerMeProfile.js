@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TextInput,
   View,
 } from 'react-native';
 
@@ -19,13 +20,14 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 import Category from '../components/Category';
+import BarterCategory from '../components/BarterCategory'
 import ProfileCategory from '../components/ProfileCategory'
 
 import { StackNavigator } from 'react-navigation';
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
-    title: 'Community',
+    title: 'My Profile',
     headerTitleStyle: {
       fontWeight: 'bold',
       fontSize: 40,
@@ -43,12 +45,20 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+        Alert.alert(
+              'Change your story..',
+              'Tap on text to edit!',
+              [
+                {text: 'Okay', onPress: () => console.log('Cancel Pressed!')},
+              ],
+          { cancelable: false }
+        )
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Terry McGuire </Text>        
+        <TextInput style= {{fontSize: 32, fontWeight: 'bold', color: '#96594A', paddingTop: 5, margin: 12}}> Terry McGuire </TextInput>        
         </View>
         
         <View style={styles.profilePic}>
@@ -58,30 +68,48 @@ export default class DiscoverScreen extends React.Component {
             source={require('../assets/images/Terry.jpg')}
           />
         </View>
-
         <View style={styles.c1}>
           <View style={styles.bioContainer}>
-            <Text style={styles.bioText}>
-              I started Wild West Farms in 1978, after learning how to farm from my dad. 
-              I wanted others around me to experience how wonderful unsulfured apricots taste.
-              </Text>
+            <TextInput multiline style={styles.bioText}>
+              I started Wild West in 1978, after I began learning how to farm from my dad. I tried to show others around me the unique experience of how wonderful unsulfured apricots taste. They taste amazing!
+              </TextInput>
           </View>
         </View>
         
-        <ScrollView horizontal={true}
-        showsHorizontalScrollIndicator={false}>
+        <ScrollView style = {{marginRight:20}} horizontal={true} showsHorizontalScrollIndicator={false}>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/PersonalInfoCard.png')}
-        name="Burlingame Market"/>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/ProductsCard.png')}
-        name="Palo Alto Market"/>
 
-        <ProfileCategory 
-        imageUri={require('../assets/images/CarInfoCard.png')}
-        name="San Mateo Market"/>
+
+        <View style={styles.rectangle}>
+            <Text style = {{color: '#96594A', fontWeight: 'bold', textDecorationLine: 'underline', textAlign: 'center', paddingTop: 10, }}> Personal Info </Text>
+            <View style={{height:40, width:200, textAlign: 'center', flexDirection: 'row'}}>
+              <Text style = {{color: '#96594A', right: 46, textAlign: 'center', paddingTop: 8, paddingLeft: 115}}> Age: </Text>
+              <TextInput style = {{paddingLeft: 4, color: '#96594A', bottom: 3, right: 48, width:40}}>62</TextInput>
+            </View>
+        </View>
+
+         <View style={styles.rectangle}>
+            <Text style = {{textAlign: 'center', color: '#96594A', fontWeight: 'bold',textDecorationLine: 'underline', right: 30, paddingTop: 10, paddingLeft:30 }}>      Car Info </Text>
+            <View style={{height:40, width:200,}}>
+              <TextInput multiline style = {{paddingLeft: 20, color: '#96594A', alignContent: 'center', top: 3, left: 15, width:200}}>Make: Toyota Camry </TextInput>
+              <TextInput multiline style = {{paddingLeft: 0, color: '#96594A', alignContent: 'center', top: 3, left: 15, width:200}}>Space: 400 Liters Available </TextInput>
+            </View>
+        </View>
+        <View style={styles.rectangle}>
+            <Text style = {{textAlign: 'center', color: '#96594A', fontWeight: 'bold',textDecorationLine: 'underline', right: 30, paddingTop: 10, paddingLeft:30 }}>         Product Genre </Text>
+            <View style={{height:40, width:200,}}>
+              <TextInput multiline style = {{paddingLeft: 20, color: '#96594A', alignContent: 'center', top: 3, left: 40, width:150}}>Mixed Fruits </TextInput>
+            </View>
+        </View>
+
+       
+
+
+
+
+
+
         </ScrollView>
 
       </ScrollView>
@@ -100,15 +128,15 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   c1: {
-    paddingLeft: 15,
-    paddingRight: 15,
+    paddingLeft: 23,
+    paddingRight: 23,
   },
   bioContainer: {
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 15,
+    paddingTop: 5,
     paddingBottom: 15,
     paddingLeft: 15,
     paddingRight: 15,
@@ -120,6 +148,8 @@ const styles = StyleSheet.create({
     color: '#96594A',
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
     fontSize: 16,
 
   },
@@ -144,7 +174,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7EFEC',
     margin: 0
   },
-  containerTwo: {
+  rectangle: {
+    flex: 1,
+    alignItems: 'center',
+    width: 110 * 2,
+    height: 90,
+    backgroundColor: '#FFFFFF',
+    left: 10,
+    margin: 15,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+  },containerTwo: {
     flex: 1,
     backgroundColor: '#DDD',
   },

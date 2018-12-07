@@ -12,6 +12,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import DropdownMenu from 'react-native-dropdown-menu';
+
 import { SearchBar, Button} from 'react-native-elements';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import { WebBrowser } from 'expo';
@@ -26,23 +28,35 @@ class PickerExample extends Component {
       this.setState({ user: user })
    }
    render() {
+     var data = [["Request from", "Paicines", "Monterey", "Placerville", 
+     "Nevada City","Other"], ["Request to", "San Mateo Market", "Burlingame Market", 
+     ,"Palo Alto (Downtown) Market", "Other"]];
       return (
-         <View>
-            <Text style= {{color: '#96594A',fontSize: 30, fontWeight: 'bold'}}> Requesting ride from: </Text>
-            <Text style= {{color: '#000000',fontSize: 20, fontWeight: 'bold'}}> Markets you frequent: </Text>
-            <View style= {{borderRadius: 10, borderWidth: 2,borderColor: '#DDDADA',}}>
-              <Picker selectedValue = {this.state.user} onValueChange = {this.updateUser}>
-                 <Picker.Item label = "Palo Alto Market" value = "Palo Alto Market" />
-                 <Picker.Item label = "Burlingame Market" value = "Burlingame Market" />
-                 
-              </Picker>
-            </View>
-            <Text style = {styles.text}>{this.state.user}</Text>
+        <View>
+
+        <View style={{flex: 1, top: 120}}>
+        <View style={{height: 64}} />
+        <DropdownMenu
+          style={{flex: 1}}
+          bgColor={'white'}
+          tintColor={'#666666'}
+          activityTintColor={'brown'}
+          // arrowImg={}      
+          // checkImage={}   
+          // optionTextStyle={{color: '#333333'}}
+          // titleStyle={{color: '#333333'}} 
+          maxHeight={150} 
+          handler={(selection, row) => this.setState({text: data[selection][row]})}
+          data={data}
+        > 
+        </DropdownMenu>
+      </View>
+
+           
          </View>
       )
    }
 }
-
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -51,9 +65,10 @@ export default class DiscoverScreen extends React.Component {
       fontWeight: 'bold',
       fontSize: 40,
       color: '#FFFFFF',
-      textAlign: 'left',
+      textAlign: 'center',
       flex: 1,
     },
+    headerTintColor: 'white',
     headerStyle: {height: 75},
     headerBackground: (
       <Image
@@ -64,14 +79,17 @@ export default class DiscoverScreen extends React.Component {
   };
 
   render() {
+    const {navigate} = this.props.navigation;
+    const farmerName = this.props.navigation.getParam('farmerName', 'Farmer X')
+    const imageName = this.props.navigation.getParam('imageName', 'Farmer X')
     return (
-      <ScrollView style={styles.container}>      
+      <View style={styles.container}>      
  
         <View style={{paddingTop: 20, flexDirection: 'row', marginBottom: 10, justifyContent: 'center',}}>
           
           <View style = {styles.farmerMeProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 10, borderWidth: 2,borderColor: 'black',}}
+              style={{height: 115, width: 115, borderRadius: 55, borderWidth: 2,borderColor: 'black',}}
               source={require('../assets/images/Farmer_Me.png')}
               >
             </Image>
@@ -79,50 +97,25 @@ export default class DiscoverScreen extends React.Component {
 
           <View style = {styles.farmerJohnProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 10, paddingLeft: 30, borderRadius: 10, borderWidth: 2,borderColor: 'black',}}
+              style={{height: 115, width: 115, paddingLeft: 30, borderRadius: 55, borderWidth: 2,borderColor: 'black',}}
               source={require('../assets/images/Farmer_John.png')}
               >
             </Image>
           </View>
         </View>
 
-        <PickerExample />
-        <View style = {{alignItems: 'center'}}>
-          <Text style = {{fontSize: 20, color: '#96594A'}}>Location not listed above? </Text>
-        </View>
+        <PickerExample/>
 
-        <View style = {{alignItems: 'center',}}>
-
-          <View style = {{height: 50, width: 300, flex: 1, flexDirection: 'row', alignItems: 'center', textAlign: 'center', textAlignVertical: 'center', justifyContent: 'center', paddingTop: 40, paddingBottom: 40}}>   
-            <TextInput
-              placeholder= '      Enter other location here' style={{fontSize: 15, flex: 1, height: 40, width: 140, borderRadius: 20, backgroundColor: 'white', borderColor: 'gray', borderWidth: 1,  justifyContent: 'flex-end',}}
-              onChangeText={(text) => this.setState({text})}
-            />   
-          </View>
-        </View>
-
-
-       <PickerExample />
-        <View style = {{alignItems: 'center'}}>
-          <Text style = {{fontSize: 20, color: '#96594A'}}>Location not listed above? </Text>
-        </View>
-
-        <View style = {{alignItems: 'center',}}>
-
-          <View style = {{height: 50, width: 300, flex: 1, flexDirection: 'row', alignItems: 'center', textAlign: 'center', textAlignVertical: 'center', justifyContent: 'center', paddingTop: 40, paddingBottom: 40}}>   
-            <TextInput
-              placeholder= '      Enter other location here' style={{fontSize: 15, flex: 1, height: 40, width: 140, borderRadius: 20, backgroundColor: 'white', borderColor: 'gray', borderWidth: 1,  justifyContent: 'flex-end',}}
-              onChangeText={(text) => this.setState({text})}
-            />   
-          </View>
-        </View>
-
-
+    
         <View style={styles.carpoolButton}>    
           <TouchableOpacity
-            onPress={() => {
-              Alert.alert('You tapped the button!');
-            }}
+              onPress={
+                () => navigate('Pending',{
+                  farmerName: farmerName,
+                  imageName: imageName,
+                  otherParam: 'Ben is the best',
+                })
+              }
             style={{
               backgroundColor: "#96594A",
               borderColor: "transparent",
@@ -134,18 +127,24 @@ export default class DiscoverScreen extends React.Component {
               shadowOffset: { width: 0, height: 2 },
               shadowOpacity: 0.5,
               shadowRadius: 5,
+              top: 15
             }}
-
           >
             <View style={styles.barterText}>    
               <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold'}}> Carpool! </Text>
             </View>  
           </TouchableOpacity>
         </View>  
+        
+<View style = {{margin:5}}>
+<View style={styles.bioContainer}>
+<TextInput multiline style={{textAlign: 'left'}} placeholder="Add a Note..."></TextInput>
+</View>
+</View>
 
-
-      </ScrollView>
+      </View>
     );
+
   }
 }
 
@@ -160,8 +159,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7EFEC',
   },
   carpoolButton:{
-    paddingTop: 15,
+    paddingTop: 50,
     paddingRight: 20,
+    bottom: 50,
     justifyContent: 'center',
         alignItems: 'center',
 
@@ -215,5 +215,17 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
-
+  bioContainer: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
+    alignItems: "flex-start",
+    justifyContent: 'center',
+    paddingTop: 5,
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 40,
+    borderWidth: 2,
+    borderColor: 'black',
+    elevation: 1,
+  },
 });

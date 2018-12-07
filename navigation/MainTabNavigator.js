@@ -8,14 +8,16 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+
 import DiscoverScreen from '../screens/DiscoverScreen';
 import DiscoverScreenFarmer from '../screens/DiscoverScreenFarmer'
 import PendingMain from '../screens/PendingMain';
+import PendingCarpool from '../screens/PendingCarpool'
 import searchScreen from '../screens/searchScreen';
 import BarterScreen from '../screens/BarterScreen'
 import SignUpScreen from '../screens/SignUpScreen';
 import CarpoolScreen from '../screens/CarpoolScreen';
-
+import MarketMap from '../screens/MarketMap'
 
 import PaloAltoMarket from '../screens/PaloAltoMarket'
 import SanMateoMarket from '../screens/SanMateoMarket'
@@ -34,12 +36,27 @@ import CheyenneCarterProfile from '../screens/CheyenneCarterProfile'
 import JimothyNealProfile from '../screens/JimothyNealProfile'
 import SanthuVistaProfile from '../screens/SanthuVistaProfile'
 
+const HomeStack = createStackNavigator({
+  Home: SplashScreen,
+});
+
+HomeStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = false;
+  if (navigation.state.index > 0) {
+    tabBarVisible = true;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
 const SplashStack = createStackNavigator({
   Discover: DiscoverScreen,
   Pending: PendingMain,
   DiscoverFarmer: DiscoverScreenFarmer,
   Search: searchScreen,
-
+  Map: MarketMap,
   
   FarmerJohn: FarmerJohnProfile,
   IanPratt: IanPrattProfile,
@@ -51,15 +68,26 @@ const SplashStack = createStackNavigator({
   CheyenneCarter: CheyenneCarterProfile,
   JimothyNeal: JimothyNealProfile,
   SanthuVista: SanthuVistaProfile,
-
   
   PaloAlto: PaloAltoMarket,
   SanMateo: SanMateoMarket,
   Burlingame: BurlingameMarket,
 });
 
+SplashStack.navigationOptions = ({ navigation }) =>  {
+  let tabBarVisible = false;
+  if (navigation.state.index > 0) {
+    tabBarVisible = true;
+  }
+
+  
+  return {
+    tabBarVisible,
+  };
+};
+
 SplashStack.navigationOptions = {
-  tabBarLabel: 'Farmer',
+  tabBarLabel: 'Discover',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -68,10 +96,13 @@ SplashStack.navigationOptions = {
   ),
 }
 
+
+
 const PendingStack = createStackNavigator({
   Pending: PendingMain,
   Barter: BarterScreen,
   Carpool: CarpoolScreen,
+  PendingCarpool: PendingCarpool,
 })
 
 PendingStack.navigationOptions = {
@@ -84,39 +115,9 @@ PendingStack.navigationOptions = {
   ),
 }
 
-
-SplashStack.navigationOptions = {
-  tabBarLabel: 'Discover',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
-
-
-const HomeStack = createStackNavigator({
-  Home: searchScreen,
-});
-
-
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Pending',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
-
 const LinksStack = createStackNavigator({
   Links: FarmerMeProfile,
+  FarmerMe: FarmerMeProfile,
 });
 
 LinksStack.navigationOptions = {

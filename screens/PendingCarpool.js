@@ -6,9 +6,7 @@ import emails from '../data/farmerData';
 import SanthuVistaProfile from '../screens/SanthuVistaProfile';
 import FarmerSanthuPic from '../assets/images/Santhu.jpg'
 import { withNavigation } from 'react-navigation';
-import Cheyenne from '../assets/images/CheyenneCarter.jpg'
 
-import ChrisMontgomeryPicture from '../assets/images/Chris.jpg'
 
 
 
@@ -19,7 +17,7 @@ export default class PendingMain extends React.Component {
     title: 'Pending',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 30,
+      fontSize: 40,
       color: '#FFFFFF',
       textAlign: 'center',
       flex: 1,
@@ -37,15 +35,15 @@ export default class PendingMain extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'first', title: 'Barters' },
-      { key: 'second', title: 'Carpools' },
+      { key: 'second', title: 'Barters' },
+      { key: 'first', title: 'Carpools' },
     ],
   };
 
   _handleIndexChange = index => this.setState({ index });
 
   _renderTabBar = props => {
-    const inputRange = props.navigationState.routes.map((x, i) => i);
+    const inputRange = props.navigationState.routes.map((x, i) => x);
 
     return (
       <View style={styles.tabBar}>
@@ -71,8 +69,8 @@ export default class PendingMain extends React.Component {
 
   render() {
     const {navigate} = this.props.navigation;
-    const farmerName = this.props.navigation.getParam('farmerName', 'Cheyenne Carter')
-    const imageName = this.props.navigation.getParam('imageName', Cheyenne)
+    const farmerName = this.props.navigation.getParam('farmerName', 'Farmer X')
+    const imageName = this.props.navigation.getParam('imageName', 'Farmer X')
     const FirstRoute = () => (
   <View style={[styles.container, { backgroundColor: '#F7EFEC' }]}>
           <View style = {styles.containerOne}>
@@ -82,7 +80,7 @@ export default class PendingMain extends React.Component {
           <View style = {styles.farmerSnippet1}>
 
             <View> 
-              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
               source={imageName}/>
             </View>
@@ -90,11 +88,11 @@ export default class PendingMain extends React.Component {
              <View> 
 
               <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> {farmerName} </Text>
+              left: 45}}> {farmerName} </Text>
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-              margin: 10, left: 28, flexWrap: "wrap"}}> My ask: Apples   |   My offer: Pears </Text>
+              margin: 10, left: 40, flexWrap: "wrap"}}> You Receive: Apples   |   You Send: Pears </Text>
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39, flexWrap: "wrap"}}> Note: Hi there! I’m trying to get my hands on... </Text>
+              left: 50, flexWrap: "wrap"}}> Note: Hi John! I’m trying to get my hands on... </Text>
 
             </View>
           </View>
@@ -102,19 +100,19 @@ export default class PendingMain extends React.Component {
           <View style = {styles.farmerSnippet2}>
 
             <View> 
-              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
-              source={require('../assets/images/Chris.jpg')}/>
+              source={require('../assets/images/header.jpg')}/>
             </View>
 
              <View> 
 
               <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> Chris Montgomery </Text>
+              left: 45}}> Farmer Tina </Text>
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-              margin: 10, left: 28,}}> My ask: Yogurt  |  My offer: Chicken </Text>
+              margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39,}}> Note: Hey there! I really want some dairy on... </Text>
+              left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
 
             </View>
           </View>
@@ -132,19 +130,19 @@ const SecondRoute = () => (
           <View style = {styles.farmerSnippet1}>
 
             <View> 
-              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
-              source={imageName}/>
+              source={require('../assets/images/header.jpg')}/>
             </View>
 
              <View> 
 
               <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> {farmerName} </Text>
+              left: 45}}> Farmer John </Text>
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-              margin: 10, left: 28, flexWrap: "wrap"}}> From: Palo Alto FM   |   To: Cal Ave FM </Text>
+              margin: 10, left: 40, flexWrap: "wrap"}}> You Receive: Apples   |   You Send: Pears </Text>
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39, flexWrap: "wrap"}}> Note: Hi there! I’m trying to go from this Pa... </Text>
+              left: 50, flexWrap: "wrap"}}> Note: Hi John! I’m trying to get my hands on... </Text>
 
             </View>
           </View>
@@ -152,19 +150,19 @@ const SecondRoute = () => (
           <View style = {styles.farmerSnippet2}>
 
             <View> 
-              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
+              <Image style = {{height: 90, width: 90, borderRadius: 45, left: 40, 
                 borderColor: '#000', borderWidth: 5}}
-              source={require('../assets/images/Ian.jpg')}/>
+              source={require('../assets/images/header.jpg')}/>
             </View>
 
              <View> 
 
               <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> Ian Pratt </Text>
+              left: 45}}> Farmer Tina </Text>
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
-              margin: 10, left: 28,}}> From: Palo Alto FM   |   To: San Mateo FM </Text>
+              margin: 10, left: 40,}}> You Receive: Yogurt  |  You Send: Chicken </Text>
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39,}}> Note: Hey there! I'm planning to go to San M... </Text>
+              left: 50,}}> Note: Hey Tina! I really want some dairy on... </Text>
 
             </View>
           </View>

@@ -11,7 +11,7 @@ import {
 
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import { SearchBar, Button} from 'react-native-elements';
+import {SearchBar, Button} from 'react-native-elements';
 
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 
@@ -30,7 +30,7 @@ export default class DiscoverScreen extends React.Component {
       fontWeight: 'bold',
       fontSize: 40,
       color: '#FFFFFF',
-      textAlign: 'left',
+      textAlign: 'center',
       flex: 1,
     },
     headerStyle: {height: 75},
@@ -48,7 +48,7 @@ export default class DiscoverScreen extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-
+        
 
         <SearchBar 
         round 

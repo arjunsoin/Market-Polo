@@ -17,7 +17,7 @@ export default [
   },
   subject: 'Burlingame',
   image: Terry_McGuire,
-  navKey: 'FarmerJohn'
+  navKey: 'FarmerMe'
 }, {
   id: 2,
   user: {

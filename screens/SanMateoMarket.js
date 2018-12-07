@@ -28,9 +28,9 @@ export default class DiscoverScreen extends React.Component {
     title: 'Discover',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 40,
+      fontSize: 30,
       color: '#FFFFFF',
-      textAlign: 'left',
+      textAlign: 'center',
       flex: 1,
     },
     headerStyle: {height: 75},    headerTintColor: 'white',
@@ -52,7 +52,11 @@ export default class DiscoverScreen extends React.Component {
         round 
         lightTheme 
         placeholder='Search for all...' 
-        containerStyle={{backgroundColor: '#F7EFEC',}}/>
+        containerStyle={{backgroundColor: '#F7EFEC',}}
+        onChangeText={
+            () => navigate('Search')
+        }
+        />
 
 
         <View style={{flexDirection: 'row', marginBottom: 10}}>
@@ -69,14 +73,15 @@ export default class DiscoverScreen extends React.Component {
         <View style={styles.buttonContainer}>
 
         <TouchableOpacity 
-          style={{ height: 100, margin: 10,
-          backgroundColor: '#DDDDDD', alignItems: 'center', 
+          onPress={() => navigate('Map')}
+          style={{ height: 30, margin: 10,
+          backgroundColor: '#96594a', alignItems: 'center', 
           borderRadius: 20}} 
 
           title="Button 2">
-
-        <Text style={{color: '#FFFFFF',}}> Market Map </Text>
-        
+        <View style = {{alignItems: 'center', textAlign: 'center', textAlignVertical: 'center', justifyContent: 'center', flex:1}}>
+          <Text style={{color: '#FFFFFF', fontWeight: 'bold'}}> Market Map </Text>
+        </View>
         </TouchableOpacity>
 
         </View>

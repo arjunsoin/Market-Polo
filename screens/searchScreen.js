@@ -12,7 +12,10 @@ export default class App extends Component {
     title: 'Search',
     headerTitleStyle: {
       color: '#FFFFFF',
+      fontSize: 30,
+      textAlign: 'center',
     },
+
     headerTintColor: 'white',
   };
  constructor(props) {
