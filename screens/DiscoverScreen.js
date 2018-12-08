@@ -117,52 +117,57 @@ export default class DiscoverScreen extends React.Component {
 
         <View style = {styles.textContainer}>
         <Text style= {{fontSize: 40, fontWeight: 'bold', color: '#96594A'}}> Today </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15, color: '#96594A'}}> What's happening around you today? </Text>
+        <Text style= {{fontSize: 15, fontWeight: 'bold', marginLeft:10, paddingBottom: 0, color: '#96594A'}}> What's happening around you today? </Text>
         </View>
 
 
         <ScrollView horizontal={true}
         showsHorizontalScrollIndicator={false}>
-
-            <View style={styles.rectangle}>
-            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Burlingame Market </Text>
-            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
-            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+          <View style={styles.rectangle}>
+            <Text style = {{color: '#96594a', fontWeight: 'bold', right: 30, top: 5}}>Burlingame Market </Text>
+            <Text style = {{color: '#96594a', right: 44, top: 5}}>Burlingame, CA </Text>
+            <Image style = {{width: 220, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <View style = {{margin: 10}}>
             <TouchableOpacity
             style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
-            borderRadius: 6, width: 120, height: 20}}
+            borderRadius: 6, width: 120, height: 25}}
             onPress={() => navigate('Burlingame')}
             >
-              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+              <Text style = {{color: '#FFFFFF', paddingTop: 5}}> Visit Market! </Text>
             </TouchableOpacity>
+            </View>
 
         </View>
 
-                    <View style={styles.rectangle}>
-            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> San Mateo Market </Text>
-            <Text style = {{color: '#000', right: 46}}> San Mateo, CA </Text>
-            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+          <View style={styles.rectangle}>
+            <Text style = {{color: '#96594a', fontWeight: 'bold', right: 30, top: 5}}> San Mateo Market </Text>
+            <Text style = {{color: '#96594a', right: 44, top: 5}}> San Mateo, CA </Text>
+            <Image style = {{width: 220, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <View style = {{margin: 10}}>
             <TouchableOpacity
             style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
-            borderRadius: 6, width: 120, height: 20}}
+            borderRadius: 6, width: 120, height: 25}}
             onPress={() => navigate('SanMateo')}
             >
-              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+              <Text style = {{color: '#FFFFFF', paddingTop: 5}}> Visit Market! </Text>
             </TouchableOpacity>
+            </View>
 
         </View>
 
-                    <View style={styles.rectangle}>
-            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Palo Alto Market </Text>
-            <Text style = {{color: '#000', right: 46}}> Palo Alto, CA </Text>
-            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+        <View style={styles.rectangle}>
+            <Text style = {{color: '#96594a', fontWeight: 'bold', right: 30, top: 5}}> Palo Alto Market </Text>
+            <Text style = {{color: '#96594a', right: 44, top: 5}}> Palo Alto, CA </Text>
+            <Image style = {{width: 220, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <View style = {{margin: 10}}>
             <TouchableOpacity
             style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
-            borderRadius: 6, width: 120, height: 20}}
+            borderRadius: 6, width: 120, height: 25}}
             onPress={() => navigate('PaloAlto')}
             >
-              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+              <Text style = {{color: '#FFFFFF', paddingTop: 5}}> Visit Market! </Text>
             </TouchableOpacity>
+            </View>
 
         </View>
 
@@ -177,7 +182,7 @@ export default class DiscoverScreen extends React.Component {
         </View>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginLeft:10, paddingBottom: 15}}> Markets you've viewed </Text>
+        <Text style= {{fontSize: 23, fontWeight: 'bold', marginLeft:5, paddingTop: 40, paddingBottom: 2, color: '#96594a'}}> Markets you've viewed </Text>
         </View>
 
         <ScrollView horizontal={true}
@@ -185,17 +190,19 @@ export default class DiscoverScreen extends React.Component {
 
 
 
-                    <View style={styles.rectangle}>
-            <Text style = {{color: '#000', fontWeight: 'bold', right: 30}}> Burlingame Market </Text>
-            <Text style = {{color: '#000', right: 46}}> Burlingame, CA </Text>
-            <Image style = {{width: 140, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+          <View style={styles.rectangle}>
+            <Text style = {{color: '#96594a', fontWeight: 'bold', right: 30, top: 5}}>Burlingame Market </Text>
+            <Text style = {{color: '#96594a', right: 44, top: 5}}>Burlingame, CA </Text>
+            <Image style = {{width: 220, height: 105, top: 10}} source={require('../assets/images/map.png')}/>
+            <View style = {{margin: 10}}>
             <TouchableOpacity
             style={{alignItems: 'center', backgroundColor: '#96594A', top: 15,
-            borderRadius: 6, width: 120, height: 20}}
+            borderRadius: 6, width: 120, height: 25}}
             onPress={() => navigate('Burlingame')}
             >
-              <Text style = {{color: '#FFFFFF'}}> Visit Market! </Text>
+              <Text style = {{color: '#FFFFFF', paddingTop: 5}}> Visit Market! </Text>
             </TouchableOpacity>
+            </View>
 
         </View>
 
@@ -253,6 +260,7 @@ const styles = StyleSheet.create({
     flex: 2,
     backgroundColor: '#F7EFEC',
     textAlign: 'left',
+    marginLeft: 15,
   }, 
     buttonContainer: {
     flex: 1,
@@ -268,7 +276,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     width: 110 * 2,
-    height: 180,
+    height: 200,
     backgroundColor: '#FFFFFF',
     left: 10,
     margin: 15,

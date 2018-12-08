@@ -30,7 +30,7 @@ export default [
 }, {
   id: 3,
   user: {
-    name: 'Santhu_Vista',
+    name: 'Santhu Vista',
   },
   subject: 'Palo Alto',
   image: Santhu_Vista,

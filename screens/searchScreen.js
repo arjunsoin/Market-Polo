@@ -52,7 +52,7 @@ export default class App extends Component {
                   <View>
                     <Image source={email.image}
                     style = {{height: 50, width: 50, borderRadius: 25, 
-                    borderColor: '#000', borderWidth: 3,}}
+                    borderColor: '#96594a', borderWidth: 2,}}
                     />
                   </View>
                   <View style = {{left: 20}}>

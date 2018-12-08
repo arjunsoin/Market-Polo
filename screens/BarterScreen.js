@@ -92,7 +92,7 @@ export default class DiscoverScreen extends React.Component {
           
           <View style = {styles.farmerMeProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2, borderColor: 'black',}}
+              style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2, borderColor: '#96594a',}}
               source={require('../assets/images/Terry.jpg')}
               >
             </Image>
@@ -100,7 +100,7 @@ export default class DiscoverScreen extends React.Component {
 
           <View style = {styles.farmerJohnProfile}>
             <Image
-              style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2,borderColor: 'black',}}
+              style={{height: 75, width: 75, borderRadius: 37, borderWidth: 2,borderColor: '#96594a',}}
               source={imageName}
               >
             </Image>
@@ -141,7 +141,7 @@ export default class DiscoverScreen extends React.Component {
         </ScrollView>
 
         <View style={{}}>
-          <Text style= {{color: '#96594A',fontSize: 20, fontWeight: 'bold', margin: 15}}> Your selected items: </Text>
+          <Text style= {{color: '#96594A',fontSize: 20, fontWeight: 'bold', margin: 0}}> Your selected items: </Text>
         </View>
         
         <View style={{flexDirection: 'row'}}>
@@ -154,7 +154,7 @@ export default class DiscoverScreen extends React.Component {
                     onPress={() => {this.RemoveSendItemsFromArray(sendArray)}}
                     >
                       <View style={styles.barterText}>
-                        <Text style= {{color: '#FFFFFF',fontSize: 16, fontWeight: 'bold',}}>{y}</Text>
+                        <Text style= {{color: '#FFFFFF',fontSize: 16, fontWeight: 'bold',}}>{y}  x</Text>
                       </View>
                     </TouchableOpacity>
                     );
@@ -162,20 +162,18 @@ export default class DiscoverScreen extends React.Component {
             }
         </View>
 
-        <View style={{}}>
-          <Text style= {{color: '#96594A',fontSize: 30, fontWeight: 'bold', margin: 15}}> I ask for: </Text>
+        <View style={{paddingTop: 30, alignItems: 'flex-end'}}>
+          <Text style= {{color: '#96594A',fontSize: 30, fontWeight: 'bold', margin: 15, flexDirection: 'flex-end'}}> I ask for: </Text>
         </View>
       
-
-
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={true} style ={{paddingTop: 0}}>
 
 
           <BarterCategory 
           imageUri={require('../assets/products/kabob.png')}
           name="Burlingame Market"
-          productcaption='Pork Kabobs'
-          method={() => {this.AddItemsToReceiveArray('Pork Kabobs') }}
+          productcaption='Kabobs'
+          method={() => {this.AddItemsToReceiveArray('Kabobs') }}
           />
 
 
@@ -196,7 +194,7 @@ export default class DiscoverScreen extends React.Component {
         </ScrollView>
 
         <View style={{}}>
-          <Text style= {{color: '#96594A',fontSize: 20, fontWeight: 'bold', margin: 15}}> Your selected items: </Text>
+          <Text style= {{color: '#96594A',fontSize: 20, fontWeight: 'bold', }}> Your selected items: </Text>
         </View>
 
         <View style={{flexDirection: 'row'}}>
@@ -208,8 +206,10 @@ export default class DiscoverScreen extends React.Component {
                     shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.5,shadowRadius: 5,}}
                     onPress={() => {this.RemoveReceiveItemsFromArray(receiveArray)}}
                     >
-                      <View style={styles.barterText}>
-                        <Text style= {{color: '#FFFFFF',fontSize: 16, fontWeight: 'bold',}}>{y}</Text>
+                      <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                        <View style={styles.barterText}>
+                          <Text style= {{color: '#FFFFFF',fontSize: 16, fontWeight: 'bold',}}>{y}  x</Text>
+                        </View>
                       </View>
                     </TouchableOpacity>
                     );
@@ -219,7 +219,7 @@ export default class DiscoverScreen extends React.Component {
 
 
 
-<View style = {{margin:20}}>
+<View style = {{margin:20, paddingTop: 30}}>
 <View style={styles.bioContainer}>
 <TextInput multiline style={{textAlign: 'left'}} placeholder="Add a Note..."></TextInput>
 </View>
@@ -265,12 +265,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7EFEC',
   },
   barterButton:{
-    paddingTop: 15,
+    paddingTop: 0,
     paddingLeft: 20,
     alignItems: 'center',
     margin: 20,
   },
   barterText:{
+    top: 2,
+    alignItems: 'center',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  Xtext:{
+    margin:2,
     alignItems: 'center',
     textAlign: 'center',
     textAlignVertical: 'center',

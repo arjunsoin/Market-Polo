@@ -54,7 +54,7 @@ export default class DiscoverScreen extends React.Component {
         <View style={styles.profilePic}>
 
           <Image 
-            style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: 'black',}}
+            style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: '#96594a',}}
             source={require('../assets/images/Chris.jpg')}
           />
         </View>
@@ -75,7 +75,6 @@ export default class DiscoverScreen extends React.Component {
               'Y\'all interact a lot!',
               'Next time, try carpooling together!',
               [
-                {text: 'Not Now', onPress: () => console.log('Cancel Pressed!')},
                 {text: 'Cool!', onPress: () => navigate('Barter',{
                       farmerName: 'Farmer Chris',
                       imageName: farmerData[5].image,
@@ -189,7 +188,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#96594a',
     elevation: 1,
   },
   rectangle: {

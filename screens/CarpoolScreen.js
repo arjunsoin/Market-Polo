@@ -89,16 +89,16 @@ export default class DiscoverScreen extends React.Component {
           
           <View style = {styles.farmerMeProfile}>
             <Image
-              style={{height: 115, width: 115, borderRadius: 55, borderWidth: 2,borderColor: 'black',}}
-              source={require('../assets/images/Farmer_Me.png')}
+              style={{height: 115, width: 115, borderRadius: 55, borderWidth: 2,borderColor: '#96594a',}}
+              source={require('../assets/images/Terry.jpg')}
               >
             </Image>
           </View>
 
           <View style = {styles.farmerJohnProfile}>
             <Image
-              style={{height: 115, width: 115, paddingLeft: 30, borderRadius: 55, borderWidth: 2,borderColor: 'black',}}
-              source={require('../assets/images/Farmer_John.png')}
+              style={{height: 115, width: 115, paddingLeft: 30, borderRadius: 55, borderWidth: 2,borderColor: '#96594a',}}
+              source={imageName}
               >
             </Image>
           </View>
@@ -136,7 +136,7 @@ export default class DiscoverScreen extends React.Component {
           </TouchableOpacity>
         </View>  
         
-<View style = {{margin:5}}>
+<View style = {{margin:15}}>
 <View style={styles.bioContainer}>
 <TextInput multiline style={{textAlign: 'left'}} placeholder="Add a Note..."></TextInput>
 </View>
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 40,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#96594a',
     elevation: 1,
   },
 });

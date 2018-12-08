@@ -28,7 +28,7 @@ export default class DiscoverScreen extends React.Component {
     title: 'Discover',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontSize: 40,
+      fontSize: 30,
       color: '#FFFFFF',
       textAlign: 'center',
       flex: 1,
@@ -100,8 +100,8 @@ export default class DiscoverScreen extends React.Component {
         </View>
 
         <View style = {styles.textContainer}>
-        <Text style= {{fontSize: 26, fontWeight: 'bold', color: '#96594A'}}>  Browse Vendors </Text>
-        <Text style= {{fontSize: 20, fontWeight: 'bold', marginTop: 5, marginLeft:10, paddingBottom: 15, color: '#96594A'}}> Active Vendors </Text>
+        <Text style= {{fontSize: 26, fontWeight: 'bold', color: '#96594A', marginLeft: 1,}}>  Browse Vendors </Text>
+        <Text style= {{fontSize: 20, fontWeight: 'bold', marginTop: 5, paddingBottom: 15, color: '#96594A', marginLeft: 11,}}>Active Vendors </Text>
 
         </View>
 
@@ -209,6 +209,7 @@ const styles = StyleSheet.create({
     flex: 2,
     backgroundColor: '#F7EFEC',
     textAlign: 'left',
+    marginLeft: 15,
   }, 
     buttonContainer: {
     flex: 1,

@@ -117,7 +117,7 @@ export default class DiscoverScreen extends React.Component {
 
         
         <TouchableOpacity
-          onPress={() => navigate('CharleneCarter')}
+          onPress={() => navigate('CheyenneCarter')}
         >
           <Category 
           imageUri={require('../assets/images/Charlene_Carter_Card.png')}

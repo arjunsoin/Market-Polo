@@ -55,7 +55,7 @@ export default class DiscoverScreen extends React.Component {
         <View style={styles.profilePic}>
 
           <Image 
-            style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: 'black',}}
+            style={{flex:1, height: 200, width: 200, borderRadius: 100, borderWidth: 3, borderColor: '#96594a',}}
             source={require('../assets/images/Ben.jpg')}
           />
         </View>
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#96594a',
     elevation: 1,
   }, rectangle: {
     flex: 1,

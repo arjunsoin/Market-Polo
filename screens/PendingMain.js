@@ -34,6 +34,8 @@ export default class PendingMain extends React.Component {
       />
     ),
   };
+
+
   state = {
     index: 0,
     routes: [
@@ -41,6 +43,8 @@ export default class PendingMain extends React.Component {
       { key: 'second', title: 'Carpools' },
     ],
   };
+
+
 
   _handleIndexChange = index => this.setState({ index });
 
@@ -83,18 +87,20 @@ export default class PendingMain extends React.Component {
 
             <View> 
               <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
-                borderColor: '#000', borderWidth: 5}}
+                borderColor: '#96594a', borderWidth: 3}}
               source={imageName}/>
             </View>
 
              <View> 
 
-              <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> {farmerName} </Text>
+              <Text h1 style= {{fontSize: 26, color: '#96594A', 
+              left: 30, top: 5}}> {farmerName} </Text>
+
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
               margin: 10, left: 28, flexWrap: "wrap"}}> My ask: Apples   |   My offer: Pears </Text>
+
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39, flexWrap: "wrap"}}> Note: Hi there! I’m trying to get my hands on... </Text>
+              left: 39, flexWrap: "wrap", bottom: 6}}> Note: Hi there! I’m trying to get my hands on... </Text>
 
             </View>
           </View>
@@ -103,18 +109,20 @@ export default class PendingMain extends React.Component {
 
             <View> 
               <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
-                borderColor: '#000', borderWidth: 5}}
+                borderColor: '#96594a', borderWidth: 3}}
               source={require('../assets/images/Chris.jpg')}/>
             </View>
 
              <View> 
 
-              <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> Chris Montgomery </Text>
+              <Text h1 style= {{fontSize: 26, color: '#96594A', 
+              left: 30, top: 5}}> Chris Montgomery </Text>
+
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
               margin: 10, left: 28,}}> My ask: Yogurt  |  My offer: Chicken </Text>
+
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39,}}> Note: Hey there! I really want some dairy on... </Text>
+              left: 39, bottom: 6}}> Note: Hey there! I really want some dairy on... </Text>
 
             </View>
           </View>
@@ -133,18 +141,20 @@ const SecondRoute = () => (
 
             <View> 
               <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
-                borderColor: '#000', borderWidth: 5}}
+                borderColor: '#96594a', borderWidth: 3}}
               source={imageName}/>
             </View>
 
              <View> 
 
-              <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> {farmerName} </Text>
+              <Text h1 style= {{fontSize: 26, color: '#96594A', 
+              left: 30, top: 5}}> {farmerName} </Text>
+
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
               margin: 10, left: 28, flexWrap: "wrap"}}> From: Palo Alto FM   |   To: Cal Ave FM </Text>
+
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39, flexWrap: "wrap"}}> Note: Hi there! I’m trying to go from this Pa... </Text>
+              left: 39, flexWrap: "wrap", bottom: 6}}> Note: Hi there! I’m trying to go from this Pa... </Text>
 
             </View>
           </View>
@@ -153,18 +163,18 @@ const SecondRoute = () => (
 
             <View> 
               <Image style = {{height: 90, width: 90, borderRadius: 45, left: 20, 
-                borderColor: '#000', borderWidth: 5}}
+                borderColor: '#96594a', borderWidth: 3}}
               source={require('../assets/images/Ian.jpg')}/>
             </View>
 
              <View> 
 
-              <Text h1 style= {{fontSize: 30, color: '#96594A', 
-              left: 30}}> Ian Pratt </Text>
+              <Text h1 style= {{fontSize: 26, color: '#96594A', 
+              left: 30, top: 5}}> Ian Pratt </Text>
               <Text h2 style= {{fontSize: 12, fontWeight: 'bold', color: '#000', 
               margin: 10, left: 28,}}> From: Palo Alto FM   |   To: San Mateo FM </Text>
               <Text h2 style= {{fontSize: 10, fontWeight: 'bold', color: '#A9A9A9', 
-              left: 39,}}> Note: Hey there! I'm planning to go to San M... </Text>
+              left: 39, bottom: 6}}> Note: Hey there! I'm planning to go to San M... </Text>
 
             </View>
           </View>
@@ -198,8 +208,6 @@ const styles = StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
     paddingTop: 10, 
-    borderWidth: 2.5,
-    borderColor: '#000',
     backgroundColor: 'rgba(0,0,0,.25)'
   },
   tabItem: {
